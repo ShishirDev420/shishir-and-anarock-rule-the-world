@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shishir and Anarock rule the world</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ANAROCK — Cinematic Strategic Intelligence Report v2.0
+   Zero-collision layout | Hyper-cinematic canvas | Executive copy
+   ============================================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --bg-deep: #050308;
+  --bg-section: #0a0814;
+  --bg-section-alt: #0c0a18;
+  --brand-purple: #a136aa;
+  --brand-purple-dark: #984F8F;
+  --brand-purple-light: #d46be0;
+  --brand-purple-glow: rgba(161, 54, 170, 0.4);
+  --text-primary: rgba(255, 255, 255, 0.9);
+  --text-body: rgba(255, 255, 255, 0.65);
+  --text-muted: rgba(255, 255, 255, 0.4);
+  --text-dim: rgba(255, 255, 255, 0.25);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(161, 54, 170, 0.5);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --glass-heavy: rgba(5, 3, 8, 0.92);
+  --glass-nav: rgba(5, 3, 8, 0.7);
+  --max-content: 1100px;
+  --radius: 16px;
+  --transition-smooth: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-reveal: 1s cubic-bezier(0.16, 1, 0.3, 1);
+  --font-head: 'Space Grotesk', sans-serif;
+  --font-body: 'Figtree', sans-serif;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; line-height: 1.65; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+img, svg { display: block; max-width: 100%; }
+
+/* ---------- Canvas ---------- */
+#bgCanvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.page-wrapper { position: relative; z-index: 2; }
+
+/* ---------- Navigation ---------- */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+  background: var(--glass-nav); border-bottom: 1px solid var(--border-subtle);
+  transition: var(--transition-smooth);
+}
+.nav-inner { max-width: var(--max-content); margin: 0 auto; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--font-head); font-size: 22px; font-weight: 700; letter-spacing: 3px; color: #fff; text-transform: uppercase; }
+.nav-logo span { color: var(--brand-purple); }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-family: var(--font-head); font-size: 12px; font-weight: 500; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--text-body); position: relative; transition: var(--transition-smooth);
+}
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--brand-purple); transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--brand-purple-light); }
+
+/* ---------- Visual Gaps ---------- */
+.visual-gap { position: relative; z-index: 2; min-height: 25vh; background: transparent !important; backdrop-filter: none !important; border: none !important; padding: 0 !important; margin: 0; pointer-events: none; }
+
+/* ---------- Sections ---------- */
+section { position: relative; z-index: 2; width: 100%; }
+.section-inner { max-width: var(--max-content); margin: 0 auto; padding: 100px 40px; }
+.section.solid { background: var(--bg-section); }
+.section.solid-alt { background: var(--bg-section-alt); }
+.section-label {
+  font-family: var(--font-head); font-size: 10px; font-weight: 600; letter-spacing: 5px;
+  text-transform: uppercase; color: var(--brand-purple); margin-bottom: 20px; display: block;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; text-align: center; position: relative; padding: 120px 40px 80px;
+}
+.hero::before {
+  content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 600px; height: 600px; background: radial-gradient(circle, rgba(161,54,170,0.18) 0%, transparent 70%);
+  pointer-events: none; z-index: -1; filter: blur(40px);
+}
+.hero-title {
+  font-family: var(--font-head); font-size: clamp(72px, 14vw, 160px); font-weight: 700;
+  line-height: 1.05; letter-spacing: -4px;
+  background: linear-gradient(120deg, #ffffff 0%, #e8d5f0 25%, #a136aa 50%, #e8d5f0 75%, #ffffff 100%);
+  background-size: 300% 300%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 60px var(--brand-purple-glow); animation: gradientShift 8s ease infinite;
+}
+@keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.hero-tagline {
+  font-family: var(--font-body); font-size: 18px; font-weight: 300; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--text-body); margin-top: 24px;
+}
+.hero-subtitle { font-family: var(--font-body); font-size: 15px; color: var(--text-dim); max-width: 520px; margin: 32px auto 0; line-height: 1.7; }
+.scroll-indicator {
+  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: var(--text-dim); font-family: var(--font-head); font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  animation: bounce 2s ease-in-out infinite;
+}
+.scroll-indicator svg { width: 24px; height: 24px; stroke: var(--text-dim); fill: none; stroke-width: 1.5; }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-12px); } 60% { transform: translateX(-50%) translateY(-6px); } }
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); font-weight: 700; line-height: 1.1; color: var(--text-primary); }
+.section-title { font-family: var(--font-head); font-size: clamp(32px, 5vw, 64px); font-weight: 700; line-height: 1.05; margin-bottom: 24px; }
+p { color: var(--text-body); line-height: 1.65; max-width: 560px; }
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px; padding: 16px 36px;
+  border: 1px solid rgba(161, 54, 170, 0.3); border-radius: 999px;
+  background: rgba(161, 54, 170, 0.15); color: #ffffff; font-family: var(--font-head);
+  font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; transition: var(--transition-smooth); position: relative; overflow: hidden;
+}
+.btn-primary:hover { border-color: var(--brand-purple); box-shadow: 0 0 30px rgba(161,54,170,0.25); transform: translateY(-2px); }
+
+/* ---------- Grid ---------- */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+/* ---------- Cards ---------- */
+.card, .info-card, .ai-card, .project-card, .case-card, .roi-card, .nri-pain-card, .metric-card {
+  background: var(--card-bg); border: 1px solid var(--border-subtle); border-radius: var(--radius);
+  padding: 32px; transition: var(--transition-smooth); position: relative; overflow: hidden;
+}
+.card:hover, .info-card:hover, .project-card:hover, .case-card:hover, .roi-card:hover, .nri-pain-card:hover, .metric-card:hover {
+  transform: translateY(-8px); border-color: var(--border-hover);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 40px rgba(161,54,170,0.08);
+}
+.ai-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+/* Info Cards */
+.info-card-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(161, 54, 170, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--brand-purple-light); }
+.info-card-title { font-family: var(--font-head); font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: 12px; }
+.info-card-list { display: flex; flex-direction: column; gap: 8px; }
+.info-card-list li { font-size: 14px; color: var(--text-body); padding-left: 18px; position: relative; line-height: 1.6; }
+.info-card-list li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-purple); }
+.info-card-list li strong { color: var(--text-primary); font-weight: 600; }
+
+/* Metric Cards */
+.metric-card { text-align: center; padding: 40px 24px; }
+.metric-value { font-family: var(--font-head); font-size: clamp(36px, 4vw, 56px); font-weight: 700; line-height: 1; background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-purple-light) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+.metric-label { font-family: var(--font-head); font-size: 12px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; }
+
+/* AI Cards */
+.ai-card { border-left: 3px solid transparent; border-radius: var(--radius); padding: 28px; }
+.ai-card-genie { border-left-color: #4caf50; }
+.ai-card-genie:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 40px rgba(76,175,80,0.08); }
+.ai-card-astra { border-left-color: var(--brand-purple); }
+.ai-card-astra:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 40px rgba(161,54,170,0.08); }
+.ai-card-cp360 { border-left-color: #ff9800; }
+.ai-card-cp360:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 40px rgba(255,152,0,0.08); }
+.ai-card-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
+.ai-card-genie .ai-card-icon { background: rgba(76, 175, 80, 0.1); color: #66bb6a; }
+.ai-card-astra .ai-card-icon { background: rgba(161, 54, 170, 0.1); color: var(--brand-purple-light); }
+.ai-card-cp360 .ai-card-icon { background: rgba(255, 152, 0, 0.1); color: #ffb74d; }
+.ai-card-title { font-family: var(--font-head); font-size: 20px; font-weight: 600; color: var(--text-primary); margin-bottom: 10px; }
+.ai-card-description { font-size: 14px; color: var(--text-body); line-height: 1.65; margin-bottom: 16px; }
+.ai-card-features { display: flex; flex-direction: column; gap: 8px; }
+.ai-card-features li { font-size: 13px; color: var(--text-muted); padding-left: 18px; position: relative; line-height: 1.6; }
+.ai-card-features li::before { content: '→'; position: absolute; left: 0; color: var(--brand-purple); font-weight: 600; }
+.badge-patented { display: inline-block; font-size: 9px; padding: 3px 10px; border-radius: 999px; background: linear-gradient(135deg, var(--brand-purple), var(--brand-purple-light)); color: #fff; font-weight: 700; letter-spacing: 0.5px; vertical-align: middle; margin-left: 8px; }
+
+/* Project Grid */
+.project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.project-card { padding: 24px; }
+.project-badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+.project-name { font-family: var(--font-head); font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+.project-dev { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; }
+.project-city { font-size: 12px; color: var(--text-dim); margin-bottom: 8px; }
+.project-price { font-size: 14px; font-weight: 600; color: var(--brand-purple-light); margin-bottom: 4px; }
+.project-sales { font-size: 11px; color: var(--text-dim); }
+
+/* Gap Analysis */
+.gap-list { display: flex; flex-direction: column; gap: 12px; }
+.gap-item { padding: 18px 24px; border-radius: 10px; border-left: 3px solid transparent; background: rgba(255,255,255,0.02); transition: var(--transition-smooth); }
+.gap-item:hover { background: rgba(255,255,255,0.04); }
+.gap-critical { border-left-color: #f44336; background: rgba(244, 67, 54, 0.04); }
+.gap-high { border-left-color: #ff9800; background: rgba(255, 152, 0, 0.04); }
+.gap-medium { border-left-color: #ffc107; background: rgba(255, 193, 7, 0.04); }
+.gap-severity { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+.gap-critical .gap-severity { background: rgba(244, 67, 54, 0.15); color: #ef5350; }
+.gap-high .gap-severity { background: rgba(255, 152, 0, 0.15); color: #ffa726; }
+.gap-medium .gap-severity { background: rgba(255, 193, 7, 0.15); color: #ffd54f; }
+.gap-title { font-family: var(--font-head); font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+.gap-description { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.gap-competitors { margin-top: 8px; font-size: 12px; color: var(--text-dim); }
+.gap-competitors strong { color: var(--text-muted); }
+
+/* WhatsApp Mockup */
+.whatsapp-mockup { background: rgba(10, 8, 14, 0.8); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 28px; max-width: 520px; margin: 0 auto; overflow: hidden; }
+.whatsapp-header { display: flex; align-items: center; gap: 12px; padding-bottom: 20px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 20px; }
+.whatsapp-header-avatar { width: 40px; height: 40px; border-radius: 50%; background: rgba(161, 54, 170, 0.2); display: flex; align-items: center; justify-content: center; color: var(--brand-purple-light); font-size: 18px; }
+.whatsapp-header-name { font-family: var(--font-head); font-size: 15px; font-weight: 600; color: var(--text-primary); }
+.whatsapp-header-status { font-size: 12px; color: var(--text-dim); }
+.whatsapp-messages { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.whatsapp-bubble { max-width: 85%; padding: 12px 16px; border-radius: 16px; font-size: 14px; line-height: 1.6; position: relative; }
+.whatsapp-bubble-bot { background: rgba(161, 54, 170, 0.12); border: 1px solid rgba(161, 54, 170, 0.15); align-self: flex-start; border-bottom-left-radius: 4px; color: rgba(255,255,255,0.9); }
+.whatsapp-bubble-user { background: rgba(76, 175, 80, 0.15); border: 1px solid rgba(76, 175, 80, 0.18); align-self: flex-end; border-bottom-right-radius: 4px; color: rgba(255,255,255,0.9); }
+.whatsapp-time { font-size: 10px; color: var(--text-dim); text-align: right; margin-top: 4px; }
+
+/* Case Study Cards */
+.case-card { padding: 32px; }
+.case-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
+.case-card-green::before { background: linear-gradient(180deg, #4caf50 0%, #2e7d32 100%); }
+.case-card-gold::before { background: linear-gradient(180deg, #ffd54f 0%, #f57f17 100%); }
+.case-logo { width: 48px; height: 48px; border-radius: 10px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--text-dim); font-size: 20px; }
+.case-stat { font-family: var(--font-head); font-size: clamp(32px, 3vw, 48px); font-weight: 700; color: var(--text-primary); line-height: 1; margin-bottom: 8px; }
+.case-stat-label { font-size: 13px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+.case-description { font-size: 14px; color: var(--text-body); line-height: 1.65; }
+
+/* Comparison Tables */
+.comparison-table-wrapper { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border-subtle); }
+.comparison-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.comparison-table thead th { background: rgba(161, 54, 170, 0.08); font-family: var(--font-head); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border-subtle); white-space: nowrap; }
+.comparison-table tbody td { padding: 14px 20px; border-bottom: 1px solid var(--border-subtle); color: var(--text-body); }
+.comparison-table tbody tr:last-child td { border-bottom: none; }
+.comparison-table tbody tr:hover { background: rgba(255,255,255,0.015); }
+.comparison-table tbody tr.highlight { background: rgba(161, 54, 170, 0.06); }
+.comparison-table tbody tr.highlight td { color: var(--text-primary); font-weight: 500; }
+
+/* ROI Cards */
+.roi-card { text-align: center; padding: 40px 28px; }
+.roi-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(161, 54, 170, 0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--brand-purple-light); font-size: 24px; }
+.roi-value { font-family: var(--font-head); font-size: clamp(32px, 3.5vw, 48px); font-weight: 700; line-height: 1; background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-purple-light) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+.roi-label { font-size: 14px; font-weight: 500; color: var(--text-muted); margin-bottom: 12px; }
+.roi-comparison { font-size: 12px; color: var(--text-dim); }
+
+/* NRI Pain Cards */
+.nri-pain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.nri-pain-card { text-align: center; padding: 32px 20px; }
+.nri-pain-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(244, 67, 54, 0.08); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: #ef5350; font-size: 22px; }
+.nri-pain-name { font-family: var(--font-head); font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 12px; }
+.nri-pain-quote { font-style: italic; font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.6; padding: 0 8px; }
+.nri-pain-description { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+/* Journey Flow */
+.journey-flow { display: flex; align-items: flex-start; justify-content: center; gap: 0; position: relative; padding: 40px 0; }
+.journey-step { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; max-width: 200px; position: relative; }
+.journey-step-number { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-purple-light) 100%); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 16px; position: relative; z-index: 2; box-shadow: 0 4px 20px rgba(161,54,170,0.3); }
+.journey-step-icon { font-size: 28px; margin-bottom: 12px; }
+.journey-step-title { font-family: var(--font-head); font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+.journey-step-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+.journey-arrow { flex: 0 0 auto; width: 40px; display: flex; align-items: center; justify-content: center; color: var(--text-dim); font-size: 20px; padding-top: 14px; }
+
+/* Stats Banner */
+.stats-banner { background: linear-gradient(135deg, rgba(161,54,170,0.12) 0%, rgba(152,79,143,0.08) 50%, rgba(212,107,224,0.12) 100%); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 48px 40px; text-align: center; }
+.stats-banner-numbers { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; margin-bottom: 24px; }
+.stats-banner-stat { text-align: center; }
+.stats-banner-value { font-family: var(--font-head); font-size: clamp(36px, 4vw, 56px); font-weight: 700; line-height: 1; background: linear-gradient(135deg, #ffd54f 0%, var(--brand-purple-light) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 6px; }
+.stats-banner-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; }
+.stats-banner-tags { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.stats-banner-tag { display: inline-block; padding: 6px 16px; border-radius: 999px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); font-size: 12px; font-weight: 500; color: var(--text-muted); letter-spacing: 0.5px; }
+
+/* Roadmap */
+.roadmap { position: relative; padding-left: 40px; }
+.roadmap::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--brand-purple) 0%, var(--brand-purple-light) 50%, rgba(161,54,170,0.1) 100%); }
+.roadmap-phase { position: relative; padding: 0 0 48px 32px; }
+.roadmap-phase:last-child { padding-bottom: 0; }
+.roadmap-dot { position: absolute; left: -32px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--brand-purple); border: 3px solid var(--bg-deep); box-shadow: 0 0 0 3px rgba(161,54,170,0.3); }
+.roadmap-phase-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--brand-purple); margin-bottom: 8px; }
+.roadmap-phase-title { font-family: var(--font-head); font-size: 20px; font-weight: 600; color: var(--text-primary); margin-bottom: 10px; }
+.roadmap-phase-description { font-size: 14px; color: var(--text-body); line-height: 1.65; max-width: 520px; }
+
+/* Footer */
+.footer { padding: 60px 40px 40px; text-align: center; border-top: 1px solid var(--border-subtle); }
+.footer-logo { font-family: var(--font-head); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: #fff; margin-bottom: 16px; }
+.footer-logo span { color: var(--brand-purple); }
+.footer-text { font-size: 12px; color: var(--text-dim); }
+.footer-contact { font-size: 14px; color: var(--text-body); margin-bottom: 24px; }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(40px) scale(0.98); transition: opacity var(--transition-reveal), transform var(--transition-reveal); will-change: opacity, transform; }
+.reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
+.reveal-grid .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-grid .reveal:nth-child(2) { transition-delay: 100ms; }
+.reveal-grid .reveal:nth-child(3) { transition-delay: 200ms; }
+.reveal-grid .reveal:nth-child(4) { transition-delay: 300ms; }
+.reveal-grid .reveal:nth-child(5) { transition-delay: 400ms; }
+.reveal-grid .reveal:nth-child(6) { transition-delay: 500ms; }
+.reveal-grid .reveal:nth-child(7) { transition-delay: 600ms; }
+.reveal-grid .reveal:nth-child(8) { transition-delay: 700ms; }
+.reveal-grid .reveal:nth-child(9) { transition-delay: 800ms; }
+.reveal-grid .reveal:nth-child(10) { transition-delay: 900ms; }
+
+/* Selection & Scrollbar */
+::selection { background: rgba(161, 54, 170, 0.35); color: #ffffff; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: rgba(161, 54, 170, 0.3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(161, 54, 170, 0.5); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .nri-pain-grid { grid-template-columns: repeat(2, 1fr); }
+  .journey-flow { flex-wrap: wrap; gap: 24px; }
+  .journey-arrow { display: none; }
+  .stats-banner-numbers { gap: 32px; }
+}
+
+@media (max-width: 768px) {
+  .section-inner { padding: 80px 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 20px 60px; }
+  .hero-title { font-size: clamp(48px, 12vw, 80px); letter-spacing: -2px; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 16px; }
+  .nri-pain-grid { grid-template-columns: 1fr; }
+  .stats-banner { padding: 32px 20px; }
+  .stats-banner-numbers { flex-direction: column; gap: 24px; }
+  .whatsapp-mockup { padding: 20px; }
+  .comparison-table thead th, .comparison-table tbody td { padding: 12px 14px; font-size: 12px; }
+  .journey-flow { flex-direction: column; align-items: center; }
+  .journey-step { max-width: 100%; }
+  .roadmap { padding-left: 32px; }
+  .roadmap-dot { left: -28px; }
+}
+
+@media (max-width: 480px) {
+  .section-inner { padding: 60px 16px; }
+  .hero { min-height: 90vh; }
+  .hero-title { letter-spacing: -1px; }
+  .metric-value, .stats-banner-value, .case-stat, .roi-value { font-size: clamp(28px, 8vw, 40px); }
+  .card, .info-card, .ai-card, .project-card, .case-card, .roi-card, .nri-pain-card { padding: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+@media print { #bgCanvas { display: none; } .page-wrapper { position: static; } body { background: #fff; color: #1a1a1a; } .reveal { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div class="page-wrapper">
+
+<!-- Navigation -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">ANAR<span>OCK</span></div>
+    <div class="nav-links">
+      <a href="#company">Overview</a>
+      <a href="#projects">Projects</a>
+      <a href="#ai">AI</a>
+      <a href="#gaps">Gaps</a>
+      <a href="#whatsapp">WhatsApp</a>
+      <a href="#nri">NRI</a>
+      <a href="#roadmap">Roadmap</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="section-inner" style="padding:0;">
+    <h1 class="hero-title">ANAROCK</h1>
+    <p class="hero-tagline">The Future of Indian Real Estate</p>
+    <p class="hero-subtitle">₹51,500 Crore in sales. 90,000 homes transacted. One intelligence platform rewriting the rules of the market.</p>
+    <a href="#company" class="btn-primary" style="margin-top:40px;">Enter the Intelligence</a>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+</section>
+
+<!-- Visual Gap -->
+<section class="visual-gap"></section>
+
+<!-- Section 01: Company Overview -->
+<section id="company" class="solid">
+  <div class="section-inner">
+    <div class="section-label">01 · Overview</div>
+    <h2 class="section-title">One Platform. One Market. Total Dominance.</h2>
+    <p style="margin-bottom:50px;">Founded by Anuj Puri, ex-Chairman of JLL India. Six years to become India's most powerful residential real estate services firm. This is not a brokerage. This is a data empire.</p>
+
+    <div class="grid-4 reveal-grid" style="margin-bottom:60px;">
+      <div class="metric-card reveal">
+        <div class="metric-value" data-count="51500">₹51,500+ Cr</div>
+        <div class="metric-label">Cumulative Sales</div>
+      </div>
+      <div class="metric-card reveal">
+        <div class="metric-value" data-count="1800">1,800+</div>
+        <div class="metric-label">Professionals</div>
+      </div>
+      <div class="metric-card reveal">
+        <div class="metric-value" data-count="80000">80,000+</div>
+        <div class="metric-label">Channel Partners</div>
+      </div>
+      <div class="metric-card reveal">
+        <div class="metric-value" data-count="150">150+</div>
+        <div class="metric-label">Developer Partners</div>
+      </div>
+    </div>
+
+    <div class="grid-3 reveal-grid">
+      <div class="info-card reveal">
+        <div class="info-card-icon">👥</div>
+        <h3 class="info-card-title">Leadership</h3>
+        <ul class="info-card-list">
+          <li><strong>Anuj Puri</strong> — Chairman &amp; Founder</li>
+          <li><strong>Santhosh Kumar</strong> — Vice Chairman</li>
+          <li><strong>Sunil Mishra</strong> — Chief AI &amp; Strategy</li>
+          <li><strong>Varun Saxena</strong> — Sr. VP AI</li>
+          <li><strong>₹200 Cr</strong> from 360 ONE Asset</li>
+        </ul>
+      </div>
+      <div class="info-card reveal">
+        <div class="info-card-icon">📊</div>
+        <h3 class="info-card-title">Financials</h3>
+        <ul class="info-card-list">
+          <li><strong>FY25</strong> — ₹755 Cr revenue</li>
+          <li><strong>FY26</strong> — ₹946 Cr target</li>
+          <li><strong>25%</strong> YoY growth</li>
+          <li><strong>IPO target</strong> FY27</li>
+          <li><strong>PMES vertical</strong> ₹1,250 Cr target</li>
+        </ul>
+      </div>
+      <div class="info-card reveal">
+        <div class="info-card-icon">🏗️</div>
+        <h3 class="info-card-title">Platform Ecosystem</h3>
+        <ul class="info-card-list">
+          <li><strong>Anarock.AI</strong> — 9 AI tools</li>
+          <li><strong>ASTRA</strong> — Patented platform</li>
+          <li><strong>ACP</strong> — 80K partner network</li>
+          <li><strong>ANACITY</strong> — 6,800+ communities</li>
+          <li><strong>myHQ</strong> — Co-working</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visual Gap -->
+<section class="visual-gap"></section>
+
+<!-- Section 02: Projects -->
+<section id="projects" class="solid-alt">
+  <div class="section-inner">
+    <div class="section-label">02 · Landmark Projects</div>
+    <h2 class="section-title">20 Landmarks. 90,000 Homes. $12 Billion.</h2>
+    <p style="margin-bottom:50px;">The skyline of modern India, powered by Anarock. Hover over the cityscape to discover each tower.</p>
+    <div class="project-grid reveal-grid" id="projectGrid"></div>
+  </div>
+</section>
+
+<!-- Visual Gap -->
+<section class="visual-gap"></section>
+
+<!-- Section 03: AI Platform -->
+<section id="ai" class="solid">
+  <div class="section-inner">
+    <div class="section-label">03 · Anarock.AI</div>
+    <h2 class="section-title">9 AI Tools. 74 ML Models. One Patent.</h2>
+    <p style="margin-bottom:50px;">Launched November 2025. 900+ home sales worth ₹1,000 Cr driven entirely by artificial intelligence. The only real estate AI platform with a granted patent.</p>
+
+    <div class="grid-2 reveal-grid" style="margin-bottom:20px;">
+      <div class="ai-card ai-card-genie reveal">
+        <div class="ai-card-icon">🧞</div>
+        <h3 class="ai-card-title">Genie Suite</h3>
+        <p class="ai-card-description">Digital visitor management, channel partner lead handling, reputation monitoring, and referral tracking.</p>
+        <ul class="ai-card-features">
+          <li><strong>Walk-in Genie</strong> — AI-driven visitor follow-ups</li>
+          <li><strong>CP Genie</strong> — Auto lead allocation</li>
+          <li><strong>ORM Genie</strong> — 25+ portal monitoring</li>
+          <li><strong>Referral Genie</strong> — Automated incentive tracking</li>
+        </ul>
+      </div>
+      <div class="ai-card ai-card-astra reveal">
+        <div class="ai-card-icon">⭐</div>
+        <h3 class="ai-card-title">Astra Suite <span class="badge-patented">PATENTED</span></h3>
+        <p class="ai-card-description">74 ML models for buyer propensity scoring, price optimization, inventory prediction, and sales coaching.</p>
+        <ul class="ai-card-features">
+          <li><strong>Astra Platinum</strong> — Buyer propensity &amp; pricing</li>
+          <li><strong>Astra Phoenix</strong> — Revives 8-9% of dead leads</li>
+          <li><strong>Astra Hire</strong> — AI recruitment scoring</li>
+          <li><strong>Astra Sales Boost</strong> — Real-time negotiation intel</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ai-card ai-card-cp360 reveal">
+      <div class="ai-card-icon">🔄</div>
+      <h3 class="ai-card-title">CP360</h3>
+      <p class="ai-card-description">AI-powered channel partner scoring &amp; tier-based allocation — ranks 80,000+ partners in real time.</p>
+      <ul class="ai-card-features">
+        <li><strong>CP Ranker</strong> — Dynamic tier allocation engine</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Visual Gap -->
+<section class="visual-gap"></section>
+
+<!-- Section 04: Gap Analysis -->
+<section id="gaps" class="solid-alt">
+  <div class="section-inner">
+    <div class="section-label">04 · Gap Analysis</div>
+    <h2 class="section-title">7 Gaps. 4 Competitors Already Winning.</h2>
+    <p style="margin-bottom:50px;">Here is what Anarock.AI is missing — and the exact playbook to close each gap before FY27.</p>
+
+    <div class="gap-list">
+      <div class="gap-item gap-critical reveal">
+        <span class="gap-severity">Critical</span>
+        <h3 class="gap-title">WhatsApp-Native AI CRM</h3>
+        <p class="gap-description">76% of buyers use WhatsApp for real estate. Genie has no structured CRM layer on WhatsApp. Leads go cold without automated nurturing.</p>
+        <div class="gap-competitors"><strong>Competitors:</strong> Kraya (55% conversion in case study), Verloop, Leadluence</div>
+      </div>
+      <div class="gap-item gap-critical reveal">
+        <span class="gap-severity">Critical</span>
+        <h3 class="gap-title">Conversation Intelligence</h3>
+        <p class="gap-description">No call recording, transcription, or AI-powered analysis of sales conversations. Prateek Group case study: AI voice cut response time 24hr → 3min, conversion lift 4-6% → 14-18%.</p>
+        <div class="gap-competitors"><strong>Competitors:</strong> Zetta, ACX</div>
+      </div>
+      <div class="gap-item gap-high reveal">
+        <span class="gap-severity">High</span>
+        <h3 class="gap-title">Competitive Intelligence</h3>
+        <p class="gap-description">No real-time scraping of IGRS/RERA/portal pricing data. PropOps shows 20%+ price gaps between quoted vs actual transaction prices.</p>
+        <div class="gap-competitors"><strong>Competitors:</strong> PropOps</div>
+      </div>
+      <div class="gap-item gap-high reveal">
+        <span class="gap-severity">High</span>
+        <h3 class="gap-title">Management NLQ Dashboard</h3>
+        <p class="gap-description">No natural-language query dashboard. A VP should ask "show me Taloja vs Panvel absorption last 6 months" and get instant charts.</p>
+        <div class="gap-competitors"><strong>Competitors:</strong> Builtrix, Fundrise RealAI</div>
+      </div>
+      <div class="gap-item gap-medium reveal">
+        <span class="gap-severity">Medium</span>
+        <h3 class="gap-title">RERA Document AI</h3>
+        <p class="gap-description">Manual contract review takes 60 min. AI can do it in 2 min with clause extraction, risk flagging, and compliance checks.</p>
+        <div class="gap-competitors"><strong>Competitors:</strong> ReraDesk, Lexlegis.ai</div>
+      </div>
+      <div class="gap-item gap-medium reveal">
+        <span class="gap-severity">Medium</span>
+        <h3 class="gap-title">AI Property Valuation (AVM)</h3>
+        <p class="gap-description">Anarock has 90,000+ transacted units in its dataset — a massive moat for automated valuation. MagicBricks PropWorth claims 98% accuracy. This dataset is sitting untapped.</p>
+        <div class="gap-competitors"><strong>Competitors:</strong> MagicBricks PropWorth, Square Yards</div>
+      </div>
+      <div class="gap-item gap-medium reveal">
+        <span class="gap-severity">Medium</span>
+        <h3 class="gap-title">NRI AI Engagement</h3>
+        <p class="gap-description">35M+ Indian diaspora, $135B in annual remittances. 67% book without site visit (AnantaSutra case study). No dedicated NRI product despite being Anarock's strongest demographic.</p>
+        <div class="gap-competitors"><strong>Competitors:</strong> AnantaSutra, NRI-focused portals</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visual Gap -->
+<section class="visual-gap"></section>
+
+<!-- Section 05: WhatsApp CRM -->
+<section id="whatsapp" class="solid">
+  <div class="section-inner">
+    <div class="section-label">05 · The Killer Feature</div>
+    <h2 class="section-title">WhatsApp-Native AI CRM for Real Estate</h2>
+    <p style="margin-bottom:50px;">76% of Indian property buyers live on WhatsApp. Genie sends emails. That is the gap. That is the opportunity.</p>
+
+    <div class="grid-4 reveal-grid" style="margin-bottom:50px;">
+      <div class="metric-card reveal">
+        <div class="metric-value">76%</div>
+        <div class="metric-label">of buyers use WhatsApp</div>
+      </div>
+      <div class="metric-card reveal">
+        <div class="metric-value">98%</div>
+        <div class="metric-label">open rate on WhatsApp</div>
+      </div>
+      <div class="metric-card reveal">
+        <div class="metric-value">78%</div>
+        <div class="metric-label">digital leads via CTWA</div>
+      </div>
+      <div class="metric-card reveal">
+        <div class="metric-value">21x</div>
+        <div class="metric-label">more likely to convert in 5 min</div>
+      </div>
+    </div>
+
+    <div class="whatsapp-mockup" style="margin-bottom:60px;">
+      <div class="whatsapp-header">
+        <div class="whatsapp-header-avatar">A</div>
+        <div>
+          <div class="whatsapp-header-name">ANAROCK Properties</div>
+          <div class="whatsapp-header-status">Online</div>
+        </div>
+      </div>
+      <div class="whatsapp-messages">
+        <div class="whatsapp-bubble whatsapp-bubble-bot">
+          👋 Welcome to ANAROCK! I'm your AI assistant.<br><br>Tell me your requirements — budget, BHK preference, and location — and I'll find the best projects for you instantly.
+          <div class="whatsapp-time">10:32 AM</div>
+        </div>
+        <div class="whatsapp-bubble whatsapp-bubble-user">
+          Hi! Looking for a 2 BHK in Navi Mumbai. Budget around ₹1.2 Cr.
+          <div class="whatsapp-time">10:34 AM</div>
+        </div>
+        <div class="whatsapp-bubble whatsapp-bubble-bot">
+          Great choice! Here are 3 top projects matching <strong>2 BHK · Navi Mumbai · ~₹1.2 Cr</strong>:<br><br>
+          🏠 <strong>Godrej Varanya</strong><br>Sector 20, Kharghar · 2 BHK @ ₹1.48 Cr ⭐ 4.5 · Possession: Dec 2026<br><br>
+          🏠 <strong>Hiranandani Fortune City</strong><br>Sector 10, Panvel · 2 BHK @ ₹1.21 Cr ⭐ 4.3 · Ready Move-in<br><br>
+          🏠 <strong>Paradise Sai World</strong><br>Sector 35, Kharghar · 2 BHK @ ₹95 L ⭐ 4.1 · Possession: Mar 2027<br><br>
+          Which one interests you? I can schedule a site visit or send you the detailed brochure 📄
+          <div class="whatsapp-time">10:34 AM</div>
+        </div>
+        <div class="whatsapp-bubble whatsapp-bubble-user">
+          Hiranandani Fortune City looks good. Can I see it this weekend?
+          <div class="whatsapp-time">10:37 AM</div>
+        </div>
+        <div class="whatsapp-bubble whatsapp-bubble-bot">
+          ✅ Site visit confirmed!<br><br>
+          📅 <strong>Saturday, 15 June</strong> at <strong>11:00 AM</strong><br>
+          📍 <strong>Hiranandani Fortune City</strong>, Sector 10, Panvel<br>
+          👤 You'll be greeted by <strong>Priya Sharma</strong> (Senior Sales Consultant)<br><br>
+          🗺️ View location on map →<br><br>
+          <em>🔔 I'll send you a reminder 2 hours before the visit. Please keep your ID proof handy.</em>
+          <div class="whatsapp-time">10:37 AM</div>
+        </div>
+        <div class="whatsapp-bubble whatsapp-bubble-bot">
+          ✅ Follow-up note added to CRM<br>
+          📌 <strong>Task:</strong> Call buyer after site visit (Mon 17 Jun)<br>
+          📌 <strong>Docs pending:</strong> Brochure + Payment plan PDF
+          <div class="whatsapp-time">10:38 AM</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3 reveal-grid" style="margin-bottom:50px;">
+      <div class="case-card case-card-green reveal">
+        <div class="case-logo">🏢</div>
+        <div class="case-stat">55%</div>
+        <div class="case-stat-label">Conversion Rate</div>
+        <p class="case-description">WhatsApp-first lead handling replaced phone calls. AI pre-qualified buyers before connecting to sales team.</p>
+      </div>
+      <div class="case-card case-card-green reveal">
+        <div class="case-logo">🏗️</div>
+        <div class="case-stat">35% ↑</div>
+        <div class="case-stat-label">Increase in Leads</div>
+        <p class="case-description">WhatsApp broadcast + AI follow-ups drove 300 visits to a single project launch weekend.</p>
+      </div>
+      <div class="case-card case-card-green reveal">
+        <div class="case-logo">🏘️</div>
+        <div class="case-stat">4X</div>
+        <div class="case-stat-label">CTR on Campaigns</div>
+        <p class="case-description">Click-to-WhatsApp ads routed directly to AI sales agent with instant responses. 20X ROI on ad spend.</p>
+      </div>
+    </div>
+
+    <div class="grid-2 reveal-grid" style="margin-bottom:50px;">
+      <div class="card" style="border-left:3px solid #f44336;background:rgba(244,67,54,0.04);">
+        <h3 style="font-family:var(--font-head);font-size:18px;color:#f44336;margin-bottom:16px;">Current Genie Suite ❌</h3>
+        <ul style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--text-muted);">
+          <li>❌ No WhatsApp-native conversation flow</li>
+          <li>❌ SMS/email only — 12-18% open rate</li>
+          <li>❌ No automated scheduling from chat</li>
+          <li>❌ No multi-language support</li>
+          <li>❌ No NRI-specific workflows</li>
+          <li>❌ No FEMA/document guidance</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left:3px solid #4caf50;background:rgba(76,175,80,0.04);">
+        <h3 style="font-family:var(--font-head);font-size:18px;color:#4caf50;margin-bottom:16px;">WhatsApp CRM ✅</h3>
+        <ul style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--text-muted);">
+          <li>✅ AI conversation on WhatsApp — 98% open rate</li>
+          <li>✅ Instant property recommendations + brochures</li>
+          <li>✅ Auto-schedule site visits + CRM sync</li>
+          <li>✅ Hindi, Marathi, English, Gujarati support</li>
+          <li>✅ NRI timezone-aware engagement</li>
+          <li>✅ FEMA, POA, NRO payment guidance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="comparison-table-wrapper" style="margin-bottom:50px;">
+      <table class="comparison-table">
+        <thead><tr><th>Product</th><th>Price</th><th>Key Strength</th><th>Used By</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Kraya AI</strong></td><td>₹2,999/mo</td><td>AI lead qualification</td><td>Mid-size builders</td></tr>
+          <tr><td><strong>Verloop.io</strong></td><td>Enterprise</td><td>Omnichannel support</td><td>Housing.com, PropTiger</td></tr>
+          <tr><td><strong>Leadluence</strong></td><td>₹1,499–3,999/mo</td><td>WhatsApp marketing</td><td>Independent brokers</td></tr>
+          <tr><td><strong>Gupshup</strong></td><td>Pay-per-chat</td><td>WhatsApp BSP infra</td><td>Enterprise</td></tr>
+          <tr><td><strong>RichAutomate</strong></td><td>₹999/mo</td><td>Flow builder + CRM</td><td>Startups</td></tr>
+          <tr class="highlight"><td><strong>ANAROCK WhatsApp CRM</strong> 🚀</td><td>₹0 (add-on)</td><td>Real estate native · AI + CRM + scheduling</td><td>Anarock portfolio</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-4 reveal-grid">
+      <div class="roi-card reveal">
+        <div class="roi-icon">💰</div>
+        <div class="roi-value">₹38,000</div>
+        <div class="roi-label">cost per booking</div>
+        <div class="roi-comparison">vs ₹84,000 (current)</div>
+      </div>
+      <div class="roi-card reveal">
+        <div class="roi-icon">📈</div>
+        <div class="roi-value">35%</div>
+        <div class="roi-label">conversion increase</div>
+        <div class="roi-comparison">vs phone-only approach</div>
+      </div>
+      <div class="roi-card reveal">
+        <div class="roi-icon">⏱️</div>
+        <div class="roi-value">20 hrs</div>
+        <div class="roi-label">saved / week</div>
+        <div class="roi-comparison">per sales team member</div>
+      </div>
+      <div class="roi-card reveal">
+        <div class="roi-icon">🏆</div>
+        <div class="roi-value">78%</div>
+        <div class="roi-label">more deals closed</div>
+        <div class="roi-comparison">via WhatsApp follow-up</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visual Gap -->
+<section class="visual-gap"></section>
+
+<!-- Section 06: NRI -->
+<section id="nri" class="solid-alt">
+  <div class="section-inner">
+    <div class="section-label">06 · NRI Opportunity</div>
+    <h2 class="section-title">The $135 Billion Market Nobody Owns</h2>
+    <p style="margin-bottom:50px;">35 million Indians abroad. $135 billion in annual remittances. 15-20% of all premium real estate. And zero AI products built for them.</p>
+
+    <div class="nri-pain-grid reveal-grid" style="margin-bottom:50px;">
+      <div class="nri-pain-card reveal">
+        <div class="nri-pain-icon">🕐</div>
+        <div class="nri-pain-name">Timezone Hell</div>
+        <div class="nri-pain-quote">"I'm in Dubai and can only call at 2AM IST"</div>
+        <div class="nri-pain-description">No agent available when NRIs are free. AI solves this instantly.</div>
+      </div>
+      <div class="nri-pain-card reveal">
+        <div class="nri-pain-icon">🔒</div>
+        <div class="nri-pain-name">Trust Gap</div>
+        <div class="nri-pain-quote">"I can't visit the site. How do I know this is real?"</div>
+        <div class="nri-pain-description">No virtual verification — buyers rely on relatives or skip entirely.</div>
+      </div>
+      <div class="nri-pain-card reveal">
+        <div class="nri-pain-icon">📋</div>
+        <div class="nri-pain-name">FEMA Maze</div>
+        <div class="nri-pain-quote">"NRE/NRO accounts, repatriation limits, TDS compliance"</div>
+        <div class="nri-pain-description">Complex regulations with zero automated guidance in current flow.</div>
+      </div>
+      <div class="nri-pain-card reveal">
+        <div class="nri-pain-icon">📄</div>
+        <div class="nri-pain-name">POA Nightmare</div>
+        <div class="nri-pain-quote">"I need someone to sign documents on my behalf"</div>
+        <div class="nri-pain-description">No digital POA support or e-sign integration in Genie Suite.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-head);font-size:22px;color:#fff;margin:40px 0 20px;">The NRI Buyer Journey — Reimagined</h3>
+    <div class="journey-flow" style="margin-bottom:50px;">
+      <div class="journey-step reveal">
+        <div class="journey-step-number">1</div>
+        <div class="journey-step-icon">💬</div>
+        <div class="journey-step-title">WhatsApp Inquiry at 2AM</div>
+        <div class="journey-step-desc">Dubai buyer messages on WhatsApp. AI responds instantly in their timezone with project recommendations in English/Hindi.</div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step reveal">
+        <div class="journey-step-number">2</div>
+        <div class="journey-step-icon">🎥</div>
+        <div class="journey-step-title">AI Virtual Tour</div>
+        <div class="journey-step-desc">3D walkthrough with AI voice narration. Answers FEMA questions, auto-converts prices to USD/AED.</div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step reveal">
+        <div class="journey-step-number">3</div>
+        <div class="journey-step-icon">📞</div>
+        <div class="journey-step-title">Video Consultation</div>
+        <div class="journey-step-desc">AI schedules a call with the NRI desk during the buyer's local daytime — not 2AM IST.</div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step reveal">
+        <div class="journey-step-number">4</div>
+        <div class="journey-step-icon">✅</div>
+        <div class="journey-step-title">Digital Closing</div>
+        <div class="journey-step-desc">Payment via NRO account, digital POA, video-based e-sign. Zero physical visits needed.</div>
+      </div>
+    </div>
+
+    <div class="whatsapp-mockup" style="margin-bottom:60px;">
+      <div class="whatsapp-header">
+        <div class="whatsapp-header-avatar">🌏</div>
+        <div>
+          <div class="whatsapp-header-name">ANAROCK NRI Desk</div>
+          <div class="whatsapp-header-status">Online · 🇮🇳 10:15 AM IST</div>
+        </div>
+      </div>
+      <div class="whatsapp-messages">
+        <div class="whatsapp-bubble whatsapp-bubble-user">
+          Hi, I'm in Dubai 🇦🇪. Looking for 2BHK in Kharghar. Budget ₹1.5Cr (~$180K). Can't visit India for 6 months.
+          <div class="whatsapp-time">8:45 PM (GST)</div>
+        </div>
+        <div class="whatsapp-bubble whatsapp-bubble-bot">
+          Welcome! I handle the full NRI purchase journey — no physical visit needed.<br><br>
+          Here are projects matching your requirements:<br><br>
+          🏠 <strong>Godrej Varanya</strong><br>2 BHK @ ₹1.48 Cr ≈ <strong>$178K USD</strong><br>Sector 20, Kharghar · ⭐ 4.5<br><br>
+          🏠 <strong>Hiranandani Fortune City</strong><br>2 BHK @ ₹1.21 Cr ≈ <strong>$145K USD</strong><br>Sector 10, Panvel · ⭐ 4.3<br><br>
+          🏠 <strong>Paradise Sai World</strong><br>2 BHK @ ₹95 L ≈ <strong>$114K USD</strong><br>Sector 35, Kharghar · ⭐ 4.1<br><br>
+          🇮🇳 <strong>FEMA Info:</strong> NRIs can purchase residential property via NRO account with full repatriation rights. I can share a detailed compliance checklist.<br><br>
+          🎥 Take 3D virtual tour →
+          <div class="whatsapp-time">8:45 PM (GST)</div>
+        </div>
+        <div class="whatsapp-bubble whatsapp-bubble-user">
+          Godrej Varanya looks perfect. Can someone do a live video walkthrough? My timezone is UAE +4.
+          <div class="whatsapp-time">8:48 PM (GST)</div>
+        </div>
+        <div class="whatsapp-bubble whatsapp-bubble-bot">
+          ✅ Absolutely! Here's a time that works:<br><br>
+          🎥 <strong>Live Video Walkthrough</strong><br>
+          📅 <strong>Monday</strong> at <strong>7:00 PM (GST)</strong> = 8:30 PM IST<br>
+          ⏱️ Duration: 25 min<br>
+          👤 Agent: <strong>Rohan Mehta</strong> (NRI Desk Specialist)<br><br>
+          <em>We'll cover: full unit tour, document checklist, NRO payment process, and digital POA setup.</em><br><br>
+          ✅ Confirm booking →<br><br>
+          📄 <em>I've also attached the FEMA NRI Property Buying Guide for your reference.</em>
+          <div class="whatsapp-time">8:49 PM (GST)</div>
+        </div>
+        <div class="whatsapp-bubble whatsapp-bubble-bot">
+          ✅ Your NRI profile is synced to our CRM.<br><br>
+          📌 <strong>Purchase summary saved:</strong><br>
+          · Property: Godrej Varanya, 2BHK, ₹1.48 Cr<br>
+          · Payment via: NRO Account (full repatriation)<br>
+          · POA: Digital e-stamp via video verification<br>
+          · Next step: Live tour on Mon
+          <div class="whatsapp-time">8:50 PM (GST)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card case-card-gold reveal" style="margin-bottom:50px;">
+      <div class="case-logo">🕉️</div>
+      <div class="case-stat">42</div>
+      <div class="case-stat-label">Villas Booked by NRIs</div>
+      <p class="case-description">AnantaSutra — Luxury Villas, Goa. NRIs from UAE, UK, and Singapore purchased luxury villas priced ₹3.5–₹8.2 Cr entirely through WhatsApp AI + 3D walkthrough + digital closing. Average decision time: 11 days vs 6 weeks typical. 67% booked without physical visit.</p>
+    </div>
+
+    <div class="stats-banner" style="margin-bottom:30px;">
+      <div class="stats-banner-numbers">
+        <div class="stats-banner-stat reveal">
+          <div class="stats-banner-value">$135B</div>
+          <div class="stats-banner-label">NRI Remittances (2024)</div>
+        </div>
+        <div class="stats-banner-stat reveal">
+          <div class="stats-banner-value">35M+</div>
+          <div class="stats-banner-label">Indian Diaspora</div>
+        </div>
+        <div class="stats-banner-stat reveal">
+          <div class="stats-banner-value">15-20%</div>
+          <div class="stats-banner-label">Premium Real Estate by NRIs</div>
+        </div>
+        <div class="stats-banner-stat reveal">
+          <div class="stats-banner-value">#1</div>
+          <div class="stats-banner-label">India Highest Remittances Globally</div>
+        </div>
+      </div>
+      <div class="stats-banner-tags">
+        <span class="stats-banner-tag">🇺🇸 USA</span>
+        <span class="stats-banner-tag">🇦🇪 UAE</span>
+        <span class="stats-banner-tag">🇬🇧 UK</span>
+        <span class="stats-banner-tag">🇨🇦 Canada</span>
+        <span class="stats-banner-tag">🇦🇺 Australia</span>
+        <span class="stats-banner-tag">🇸🇬 Singapore</span>
+        <span class="stats-banner-tag">🇸🇦 Saudi Arabia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visual Gap -->
+<section class="visual-gap"></section>
+
+<!-- Section 07: Roadmap -->
+<section id="roadmap" class="solid">
+  <div class="section-inner">
+    <div class="section-label">07 · Strategy</div>
+    <h2 class="section-title">The Roadmap to FY27</h2>
+    <p style="margin-bottom:50px;">Four phases. Eighteen months. From intelligence layer to AI-native transactions.</p>
+
+    <div class="roadmap">
+      <div class="roadmap-phase reveal">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-phase-label">Phase 1 · Q3 2025</div>
+        <h3 class="roadmap-phase-title">Core Intelligence Layer</h3>
+        <p class="roadmap-phase-description">Deploy Conversation Intelligence and Competitive Intelligence modules. Integrate call recording, transcription, and AI analysis. Build real-time IGRS/RERA/portal scraping infrastructure.</p>
+      </div>
+      <div class="roadmap-phase reveal">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-phase-label">Phase 2 · Q4 2025</div>
+        <h3 class="roadmap-phase-title">WhatsApp AI Concierge</h3>
+        <p class="roadmap-phase-description">Launch WhatsApp-native AI CRM with automated follow-ups, smart agent routing, and full CRM sync. Integrate with existing Genie Suite tools for seamless handoff.</p>
+      </div>
+      <div class="roadmap-phase reveal">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-phase-label">Phase 3 · Q1 2026</div>
+        <h3 class="roadmap-phase-title">NRI Platform Launch</h3>
+        <p class="roadmap-phase-description">Deploy NRI AI Engagement platform with timezone-aware automation, virtual tour integration, FEMA compliance tools, and POA digital workflow.</p>
+      </div>
+      <div class="roadmap-phase reveal">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-phase-label">Phase 4 · Q2 2026</div>
+        <h3 class="roadmap-phase-title">AI-Native Transactions</h3>
+        <p class="roadmap-phase-description">Launch RERA Document AI and AI Property Valuation Module. End-to-end digital transaction flow from lead to registration with full compliance automation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visual Gap -->
+<section class="visual-gap"></section>
+
+<!-- Footer -->
+<footer class="footer solid-alt">
+  <div class="section-inner" style="padding-top:60px;padding-bottom:40px;">
+    <div class="footer-logo">ANAR<span>OCK</span></div>
+    <p class="footer-contact">For inquiries, contact <strong>Shishir</strong> — Manager, Strategic Intelligence at ANAROCK</p>
+    <p class="footer-text">© 2025 ANAROCK Intelligence. All rights reserved.</p>
+  </div>
+</footer>
+
+</div>
+
+<script>
+/* ============================================================
+   CANVAS 3D CITYSCAPE — Hyper-Cinematic v2.0
+   ============================================================ */
+(function() {
+  'use strict';
+  const canvas = document.getElementById('bgCanvas');
+  const ctx = canvas.getContext('2d');
+  const ISO = Math.PI / 6, COS = Math.cos(ISO), SIN = Math.sin(ISO);
+  const GRID = 14, DPR_MAX = 1.5, FPS = 30, FI = 1000 / FPS;
+  let W, H, sc, dpr, mx = -9999, my = -9999, hi = -1, lft = 0, t = 0;
+  let sCv = null, sCtx = null;
+  let canvasEnabled = true;
+
+  const PROJECTS = [
+    { name: 'Godrej Varanya', price: '₹2.14 – 4.18 Cr', developer: 'Godrej Properties', location: 'Kharghar', x: 5, z: 4, height: 110 },
+    { name: 'DLF Westpark', price: '₹4.8 – 9 Cr', developer: 'DLF Ltd.', location: 'Andheri', x: 8, z: 6, height: 150 },
+    { name: 'Hiranandani Fortune', price: '₹1.21 – 3.17 Cr', developer: 'Hiranandani', location: 'Panvel', x: 4, z: 8, height: 85 },
+    { name: 'Godrej Woodscapes', price: '₹1.74 – 4.72 Cr', developer: 'Godrej Properties', location: 'Whitefield', x: 8, z: 2, height: 95 },
+    { name: 'Trump Residences', price: '₹5 – 15 Cr', developer: 'Tribeca', location: 'Gurugram', x: 10, z: 6, height: 170 },
+    { name: 'Lodha Malabar', price: '₹135 Cr+', developer: 'Lodha Group', location: 'Malabar Hill', x: 4, z: 10, height: 190 },
+    { name: 'Godrej Trilogy', price: '₹17.5 Cr+', developer: 'Godrej Properties', location: 'Worli', x: 9, z: 5, height: 130 },
+    { name: 'Swaminarayan City', price: '₹45 – 70.5 L', developer: 'Swaminarayan LS', location: 'Dombivli', x: 6, z: 9, height: 65 },
+  ];
+
+  const PAL = [
+    { t: '#3a3548', l: '#2a2538', r: '#1a1528' },
+    { t: '#2e3040', l: '#1e2030', r: '#121420' },
+    { t: '#3a3028', l: '#2a2018', r: '#1e1810' },
+    { t: '#2a2e38', l: '#1a1e28', r: '#121418' },
+    { t: '#383040', l: '#282030', r: '#1c1618' },
+    { t: '#2a2838', l: '#1e1c2c', r: '#141220' },
+  ];
+
+  let B = [], P = [], C = [], SS = [], FD = [];
+
+  function scr(x, y, z) {
+    return { sx: Math.round((x - z) * COS * sc + W / 2), sy: Math.round((x + z - GRID) * SIN * sc - y * sc + H * 0.58) };
+  }
+  function cl(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  function dk(hx, a) {
+    const n = parseInt(hx.slice(1), 16);
+    return `rgb(${cl((n >> 16) - a, 0, 255)},${cl(((n >> 8) & 255) - a, 0, 255)},${cl((n & 255) - a, 0, 255)})`;
+  }
+
+  function gen() {
+    B = []; const O = new Set(), R = new Set(), K = new Set();
+    const RD = [3, 7, 11];
+    RD.forEach(rx => { for (let gz = 0; gz < GRID; gz++) R.add(rx + ',' + gz); });
+    RD.forEach(rz => { for (let gx = 0; gx < GRID; gx++) R.add(gx + ',' + rz); });
+    const PK = [[1, 1], [5, 9], [9, 1], [12, 12], [1, 12], [10, 10]];
+    PK.forEach(([px, pz]) => { for (let dx = 0; dx < 2; dx++) for (let dz = 0; dz < 2; dz++) { const k = (px + dx) + ',' + (pz + dz); if (!R.has(k)) K.add(k); } });
+
+    for (const pd of PROJECTS) {
+      const k = pd.x + ',' + pd.z;
+      O.add(k); R.delete(k); K.delete(k);
+      const h = pd.height / 100;
+      const st = pd.height > 120 ? 'penthouse' : (pd.height > 90 ? 'parapet' : 'pyramid');
+      B.push({ x: pd.x + 0.22, z: pd.z + 0.22, w: 0.56, d: 0.56, h, pal: PAL[0], isProject: true, pd, seed: pd.x * 131 + pd.z * 71, roof: st });
+    }
+
+    for (let gx = 0; gx < GRID; gx++) {
+      for (let gz = 0; gz < GRID; gz++) {
+        const k = gx + ',' + gz;
+        if (O.has(k) || R.has(k) || K.has(k)) continue;
+        const e = gx < 1 || gx > GRID - 2 || gz < 1 || gz > GRID - 2;
+        if (e && Math.random() > 0.18) continue;
+        if (!e && Math.random() > 0.42) continue;
+        const dc = Math.abs(gx - GRID / 2) + Math.abs(gz - GRID / 2);
+        let h = dc < 3 ? 1.1 + Math.random() * 0.9 : dc < 5 ? 0.6 + Math.random() * 0.8 : dc < 7 ? 0.3 + Math.random() * 0.5 : 0.15 + Math.random() * 0.3;
+        if (e) h *= 0.4;
+        let w, d;
+        if (h < 0.6) { w = 0.7 + Math.random() * 0.2; d = 0.7 + Math.random() * 0.2; }
+        else if (h < 1.4) { w = 0.5 + Math.random() * 0.2; d = 0.5 + Math.random() * 0.2; }
+        else { w = 0.3 + Math.random() * 0.15; d = 0.3 + Math.random() * 0.15; }
+        let st = h < 0.5 ? (Math.random() > 0.5 ? 'pyramid' : 'dome') : h < 1.2 ? (Math.random() > 0.6 ? 'parapet' : 'flat') : (Math.random() > 0.5 ? 'penthouse' : 'parapet');
+        B.push({ x: gx + (1 - w) / 2 + (Math.random() - 0.5) * 0.08, z: gz + (1 - d) / 2 + (Math.random() - 0.5) * 0.08, w, d, h, pal: PAL[Math.floor(Math.random() * PAL.length)], isProject: false, pd: null, seed: gx * 137 + gz * 73 + Math.floor(Math.random() * 100), roof: st });
+      }
+    }
+
+    P = [];
+    for (let i = 0; i < 25; i++) P.push({ x: Math.random() * GRID, z: Math.random() * GRID, y: Math.random() * 2.5, vy: 0.008 + Math.random() * 0.018, ph: Math.random() * Math.PI * 2 });
+
+    C = [];
+    for (const rz of RD) {
+      for (let i = 0; i < 3; i++) {
+        C.push({ a: 'x', p: rz + 0.5, pr: Math.random(), sp: 0.004 + Math.random() * 0.008, dir: 1, c: '#ffe0c0' });
+        C.push({ a: 'x', p: rz + 0.5, pr: Math.random(), sp: 0.004 + Math.random() * 0.008, dir: -1, c: '#ff4444' });
+      }
+    }
+    for (const rx of RD) {
+      for (let i = 0; i < 3; i++) {
+        C.push({ a: 'z', p: rx + 0.5, pr: Math.random(), sp: 0.004 + Math.random() * 0.008, dir: 1, c: '#ffe0c0' });
+        C.push({ a: 'z', p: rx + 0.5, pr: Math.random(), sp: 0.004 + Math.random() * 0.008, dir: -1, c: '#ff4444' });
+      }
+    }
+
+    SS = [];
+    for (let i = 0; i < 15; i++) SS.push({ nx: Math.random(), ny: Math.random() * 0.45, ph: Math.random() * Math.PI * 2, sz: 0.6 + Math.random() * 1.2 });
+
+    FD = [
+      { ny: 0.72, sp: 0.18, rd: 0.55, a: 0.07 },
+      { ny: 0.80, sp: 0.12, rd: 0.45, a: 0.05 },
+      { ny: 0.86, sp: 0.08, rd: 0.65, a: 0.09 },
+    ];
+  }
+
+  function mkStat() {
+    sCv = document.createElement('canvas');
+    sCv.width = W * dpr; sCv.height = H * dpr;
+    sCtx = sCv.getContext('2d');
+    sCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drSky(sCtx); drStars(sCtx); drMoon(sCtx); drHoriz(sCtx); drGround(sCtx); drRoads(sCtx);
+    const S = B.slice().sort((a, b) => (a.x + a.z) - (b.x + b.z));
+    for (const b of S) drGlow(sCtx, b.x + b.w / 2, b.z + b.d / 2);
+    for (const b of S) drBld(sCtx, b);
+  }
+
+  function drSky(c) {
+    const g = c.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#03020a'); g.addColorStop(0.25, '#08041a'); g.addColorStop(0.5, '#10082e'); g.addColorStop(0.75, '#180c3a'); g.addColorStop(1, '#1e1040');
+    c.fillStyle = g; c.fillRect(0, 0, W, H);
+  }
+  function drStars(c) {
+    for (let i = 0; i < 280; i++) {
+      const sx = Math.random() * W, sy = Math.random() * H * 0.52;
+      const sz = Math.random() < 0.85 ? 0.5 + Math.random() * 0.6 : 1 + Math.random() * 1.2;
+      const a = 0.08 + Math.random() * 0.45;
+      c.fillStyle = `rgba(220,230,255,${a})`; c.fillRect(sx - sz / 2, sy - sz / 2, sz, sz);
+    }
+  }
+  function drMoon(c) {
+    const mx = W * 0.13, my = H * 0.11, r = Math.min(W, H) * 0.032;
+    c.fillStyle = '#f0e8d8'; c.beginPath(); c.arc(mx, my, r, 0, Math.PI * 2); c.fill();
+    c.fillStyle = '#08051a'; c.beginPath(); c.arc(mx + r * 0.38, my - r * 0.05, r * 0.92, 0, Math.PI * 2); c.fill();
+  }
+  function drHoriz(c) {
+    const g = c.createRadialGradient(W * 0.5, H * 0.92, 0, W * 0.5, H * 0.92, W * 0.65);
+    g.addColorStop(0, 'rgba(80,40,70,0.22)'); g.addColorStop(0.35, 'rgba(50,25,60,0.10)'); g.addColorStop(1, 'rgba(5,2,10,0)');
+    c.fillStyle = g; c.fillRect(0, 0, W, H);
+  }
+  function drGround(c) {
+    const g = c.createRadialGradient(W / 2, H * 0.72, 0, W / 2, H * 0.72, H * 0.7);
+    g.addColorStop(0, 'rgba(35,18,55,0.25)'); g.addColorStop(0.5, 'rgba(18,10,35,0.12)'); g.addColorStop(1, 'rgba(5,3,10,0)');
+    c.fillStyle = g; c.fillRect(0, 0, W, H);
+  }
+  function drRoads(c) {
+    const RD = [3, 7, 11];
+    for (let gx = 0; gx < GRID; gx++) {
+      for (let gz = 0; gz < GRID; gz++) {
+        const bl = scr(gx, 0, gz), br = scr(gx + 1, 0, gz), fr = scr(gx + 1, 0, gz + 1), fl = scr(gx, 0, gz + 1);
+        const ro = RD.includes(gx) || RD.includes(gz);
+        const pk = !ro && ((gx >= 1 && gx <= 2 && gz >= 1 && gz <= 2) || (gx >= 5 && gx <= 6 && gz >= 9 && gz <= 10) || (gx >= 9 && gx <= 10 && gz >= 1 && gz <= 2) || (gx >= 12 && gx <= 13 && gz >= 12 && gz <= 13) || (gx >= 1 && gx <= 2 && gz >= 12 && gz <= 13) || (gx >= 10 && gx <= 11 && gz >= 10 && gz <= 11));
+        c.fillStyle = ro ? '#0c0818' : pk ? '#0a1a10' : 'rgba(20,12,35,0.15)';
+        c.beginPath(); c.moveTo(bl.sx, bl.sy); c.lineTo(br.sx, br.sy); c.lineTo(fr.sx, fr.sy); c.lineTo(fl.sx, fl.sy); c.closePath(); c.fill();
+      }
+    }
+    c.strokeStyle = 'rgba(100,60,150,0.04)'; c.lineWidth = 0.5;
+    for (let i = 0; i <= GRID; i++) {
+      const p1 = scr(i, 0, 0), p2 = scr(i, 0, GRID), p3 = scr(0, 0, i), p4 = scr(GRID, 0, i);
+      c.beginPath(); c.moveTo(p1.sx, p1.sy); c.lineTo(p2.sx, p2.sy); c.stroke();
+      c.beginPath(); c.moveTo(p3.sx, p3.sy); c.lineTo(p4.sx, p4.sy); c.stroke();
+    }
+  }
+  function drGlow(c, cx, cz) {
+    const b = scr(cx, 0, cz), r = sc * 0.55;
+    const g = c.createRadialGradient(b.sx, b.sy, 0, b.sx, b.sy, r);
+    g.addColorStop(0, 'rgba(255,130,30,0.10)'); g.addColorStop(0.5, 'rgba(255,90,20,0.04)'); g.addColorStop(1, 'rgba(255,60,10,0)');
+    c.fillStyle = g; c.fillRect(b.sx - r, b.sy - r, r * 2, r * 2);
+  }
+
+  function drBld(c, b) {
+    const x0 = b.x, x1 = b.x + b.w, z0 = b.z, z1 = b.z + b.d, y0 = 0, y1 = b.h, p = b.pal;
+    const blb = scr(x0, y0, z0), brb = scr(x1, y0, z0), flb = scr(x0, y0, z1), frb = scr(x1, y0, z1);
+    const blt = scr(x0, y1, z0), brt = scr(x1, y1, z0), flt = scr(x0, y1, z1), frt = scr(x1, y1, z1);
+
+    c.fillStyle = p.r;
+    c.beginPath(); c.moveTo(brb.sx, brb.sy); c.lineTo(frb.sx, frb.sy); c.lineTo(frt.sx, frt.sy); c.lineTo(brt.sx, brt.sy); c.closePath(); c.fill();
+
+    c.fillStyle = p.l;
+    c.beginPath(); c.moveTo(flb.sx, flb.sy); c.lineTo(frb.sx, frb.sy); c.lineTo(frt.sx, frt.sy); c.lineTo(flt.sx, flt.sy); c.closePath(); c.fill();
+
+    if (b.h > 0.12) {
+      const cf = Math.max(2, Math.floor(b.w / 0.1)), rf = Math.max(2, Math.floor(b.h / 0.1));
+      const cr = Math.max(2, Math.floor(b.d / 0.1)), rr = rf;
+      drWin(c, flb, frb, frt, flt, cf, rf, b.seed, 1.0);
+      drWin(c, brb, frb, frt, brt, cr, rr, b.seed + 1, 0.65);
+      drPlate(c, flb, frb, frt, flt, rf, p);
+      drPlate(c, brb, frb, frt, brt, rr, p);
+    }
+
+    if (b.h > 1.2) {
+      const by = b.h * 0.68;
+      const b1 = scr(x0, by, z1), b2 = scr(x1, by, z1), b3 = scr(x1, by, z0);
+      c.strokeStyle = 'rgba(0,0,0,0.28)'; c.lineWidth = 1.2;
+      c.beginPath(); c.moveTo(b1.sx, b1.sy); c.lineTo(b2.sx, b2.sy); c.lineTo(b3.sx, b3.sy); c.stroke();
+    }
+
+    c.fillStyle = p.t;
+    c.beginPath(); c.moveTo(blt.sx, blt.sy); c.lineTo(brt.sx, brt.sy); c.lineTo(frt.sx, frt.sy); c.lineTo(flt.sx, flt.sy); c.closePath(); c.fill();
+
+    drRoof(c, b, blt, brt, frt, flt);
+    if (b.h > 1.15 || b.isProject) drAnt(c, x0 + b.w / 2, y1, z0 + b.d / 2, b.h);
+  }
+
+  function drWin(c, bl, br, tr, tl, cols, rows, seed, bm) {
+    const ux = (br.sx - bl.sx) / cols, uy = (br.sy - bl.sy) / cols;
+    const vx = (tl.sx - bl.sx) / rows, vy = (tl.sy - bl.sy) / rows;
+    const hw = 0.32, hh = 0.32;
+    for (let r = 0; r < rows; r++) {
+      const fr = Math.abs(Math.sin(seed * 17.3 + r * 4.7));
+      const flr = fr > 0.28 ? 0.55 + fr * 0.38 : 0.03 + fr * 0.18;
+      for (let col = 0; col < cols; col++) {
+        const wr = Math.abs(Math.sin(seed * 31.1 + r * 7.3 + col * 11.9));
+        if (wr >= flr) continue;
+        const wm = Math.abs(Math.sin(seed * 53.7 + r * 13.1 + col * 19.3));
+        const a = (0.28 + wm * 0.52) * bm;
+        const cx = bl.sx + (col + 0.5) * ux + (r + 0.5) * vx;
+        const cy = bl.sy + (col + 0.5) * uy + (r + 0.5) * vy;
+        const w1x = cx - ux * hw - vx * hh, w1y = cy - uy * hw - vy * hh;
+        const w2x = cx + ux * hw - vx * hh, w2y = cy + uy * hw - vy * hh;
+        const w3x = cx + ux * hw + vx * hh, w3y = cy + uy * hw + vy * hh;
+        const w4x = cx - ux * hw + vx * hh, w4y = cy - uy * hw + vy * hh;
+        c.fillStyle = `rgba(255,${185 + (wm * 35 | 0)},${95 + (wm * 55 | 0)},${a})`;
+        c.beginPath(); c.moveTo(w1x, w1y); c.lineTo(w2x, w2y); c.lineTo(w3x, w3y); c.lineTo(w4x, w4y); c.closePath(); c.fill();
+        c.strokeStyle = `rgba(0,0,0,${a * 0.5})`; c.lineWidth = 0.5; c.stroke();
+      }
+    }
+  }
+
+  function drPlate(c, bl, br, tr, tl, rows, pal) {
+    const iv = rows > 8 ? 3 : rows > 4 ? 2 : 2;
+    c.strokeStyle = dk(pal.t, 35); c.lineWidth = 0.5; c.globalAlpha = 0.35;
+    for (let r = iv; r < rows; r += iv) {
+      const t = r / rows;
+      const x1 = bl.sx + (tl.sx - bl.sx) * t, y1 = bl.sy + (tl.sy - bl.sy) * t;
+      const x2 = br.sx + (tr.sx - br.sx) * t, y2 = br.sy + (tr.sy - br.sy) * t;
+      c.beginPath(); c.moveTo(x1, y1); c.lineTo(x2, y2); c.stroke();
+    }
+    c.globalAlpha = 1;
+  }
+
+  function drRoof(c, b, bl, br, fr, fl) {
+    const cx = (bl.sx + br.sx + fr.sx + fl.sx) / 4, cy = (bl.sy + br.sy + fr.sy + fl.sy) / 4;
+    if (b.roof === 'pyramid') {
+      const py = cy - sc * 0.12 * Math.min(b.h, 2);
+      c.fillStyle = dk(b.pal.t, 25);
+      c.beginPath(); c.moveTo(cx, py); c.lineTo(fl.sx, fl.sy); c.lineTo(fr.sx, fr.sy); c.closePath(); c.fill();
+      c.fillStyle = dk(b.pal.t, 35);
+      c.beginPath(); c.moveTo(cx, py); c.lineTo(fr.sx, fr.sy); c.lineTo(br.sx, br.sy); c.closePath(); c.fill();
+    } else if (b.roof === 'dome') {
+      const dh = sc * 0.08;
+      c.fillStyle = dk(b.pal.t, 15);
+      c.beginPath(); c.moveTo(fl.sx, fl.sy); c.quadraticCurveTo(cx, cy - dh, br.sx, br.sy); c.lineTo(fr.sx, fr.sy); c.quadraticCurveTo(cx, cy - dh * 0.25, fl.sx, fl.sy); c.closePath(); c.fill();
+    } else if (b.roof === 'parapet') {
+      c.strokeStyle = dk(b.pal.t, 30); c.lineWidth = 2;
+      c.beginPath(); c.moveTo(bl.sx, bl.sy); c.lineTo(br.sx, br.sy); c.lineTo(fr.sx, fr.sy); c.lineTo(fl.sx, fl.sy); c.closePath(); c.stroke();
+    } else if (b.roof === 'penthouse') {
+      const bw = b.w * 0.32, bd = b.d * 0.32, bh = 0.07;
+      const bx0 = b.x + b.w * 0.34, bz0 = b.z + b.d * 0.34;
+      const bx1 = bx0 + bw, bz1 = bz0 + bd, by0 = b.h, by1 = b.h + bh;
+      const pblb = scr(bx0, by0, bz0), pbrb = scr(bx1, by0, bz0), pflb = scr(bx0, by0, bz1), pfrb = scr(bx1, by0, bz1);
+      const pblt = scr(bx0, by1, bz0), pbrt = scr(bx1, by1, bz0), pflt = scr(bx0, by1, bz1), pfrt = scr(bx1, by1, bz1);
+      c.fillStyle = '#252030'; c.beginPath(); c.moveTo(pbrb.sx, pbrb.sy); c.lineTo(pfrb.sx, pfrb.sy); c.lineTo(pfrt.sx, pfrt.sy); c.lineTo(pbrt.sx, pbrt.sy); c.closePath(); c.fill();
+      c.fillStyle = '#302838'; c.beginPath(); c.moveTo(pflb.sx, pflb.sy); c.lineTo(pfrb.sx, pfrb.sy); c.lineTo(pfrt.sx, pfrt.sy); c.lineTo(pflt.sx, pflt.sy); c.closePath(); c.fill();
+      c.fillStyle = '#383040'; c.beginPath(); c.moveTo(pblt.sx, pblt.sy); c.lineTo(pbrt.sx, pbrt.sy); c.lineTo(pfrt.sx, pfrt.sy); c.lineTo(pflt.sx, pflt.sy); c.closePath(); c.fill();
+    }
+  }
+
+  function drAnt(c, x, y, z, h) {
+    const b = scr(x, y, z), tp = scr(x, y + 0.12 + h * 0.04, z);
+    c.strokeStyle = '#3a3448'; c.lineWidth = 1;
+    c.beginPath(); c.moveTo(b.sx, b.sy); c.lineTo(tp.sx, tp.sy); c.stroke();
+    c.fillStyle = '#ff2a2a'; c.fillRect(tp.sx - 1, tp.sy - 1, 2, 2);
+    if (h > 1.4) {
+      const md = scr(x, y + 0.06 + h * 0.02, z);
+      c.strokeStyle = '#3a3448'; c.lineWidth = 0.8;
+      c.beginPath(); c.moveTo(md.sx - 4, md.sy); c.lineTo(md.sx + 4, md.sy); c.stroke();
+    }
+  }
+
+  function drSpark(c, t) {
+    for (const s of SS) {
+      const sx = s.nx * W, sy = s.ny * H;
+      const a = 0.15 + 0.35 * (0.5 + 0.5 * Math.sin(t * 1.8 + s.ph));
+      c.fillStyle = `rgba(255,255,240,${a})`; c.fillRect(sx - s.sz / 2, sy - s.sz / 2, s.sz, s.sz);
+    }
+  }
+  function drFog(c, t) {
+    for (const f of FD) {
+      const x = W * 0.5 + Math.sin(t * f.sp) * W * 0.22, y = H * f.ny;
+      const r = Math.min(W, H) * f.rd;
+      const g = c.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, `rgba(18,8,35,${f.a})`); g.addColorStop(1, 'rgba(5,2,10,0)');
+      c.fillStyle = g; c.fillRect(0, 0, W, H);
+    }
+  }
+  function drPart(c) {
+    for (const p of P) {
+      p.y += p.vy;
+      if (p.y > 3) { p.y = 0; p.x = Math.random() * GRID; p.z = Math.random() * GRID; }
+      const ps = scr(p.x, p.y, p.z);
+      const a = 0.08 + 0.22 * (0.5 + 0.5 * Math.sin(t * 2.2 + p.ph));
+      c.fillStyle = `rgba(255,200,140,${a})`; c.fillRect(ps.sx - 0.12, ps.sy - 0.12, 0.24, 0.24);
+    }
+  }
+  function drCar(c) {
+    for (const car of C) {
+      car.pr += car.sp * car.dir;
+      if (car.pr > 1) car.pr -= 1;
+      if (car.pr < 0) car.pr += 1;
+      let sx, sy;
+      if (car.a === 'x') { const p = scr(car.pr * GRID, 0, car.p); sx = p.sx; sy = p.sy; }
+      else { const p = scr(car.p, 0, car.pr * GRID); sx = p.sx; sy = p.sy; }
+      c.fillStyle = car.c; c.fillRect(sx - 1, sy - 1, 2, 2);
+    }
+  }
+  function drBeac(c, t) {
+    for (let i = 0; i < B.length; i++) {
+      const b = B[i];
+      if (!b.isProject) continue;
+      const tp = scr(b.x + b.w / 2, b.h + 0.12 + b.h * 0.04, b.z + b.d / 2);
+      const pu = 0.35 + 0.65 * Math.abs(Math.sin(t * 2.2 + i));
+      c.fillStyle = `rgba(255,230,140,${pu})`; c.fillRect(tp.sx - 2, tp.sy - 2, 4, 4);
+      const r = 14, g = c.createRadialGradient(tp.sx, tp.sy, 0, tp.sx, tp.sy, r);
+      g.addColorStop(0, `rgba(161,54,170,${pu * 0.25})`);
+      g.addColorStop(0.5, `rgba(161,54,170,${pu * 0.08})`);
+      g.addColorStop(1, 'rgba(161,54,170,0)');
+      c.fillStyle = g; c.fillRect(tp.sx - r, tp.sy - r, r * 2, r * 2);
+    }
+  }
+  function drTip(c) {
+    if (!canvasEnabled || hi < 0 || hi >= B.length) return;
+    const b = B[hi];
+    if (!b || !b.isProject || !b.pd) return;
+    const pd = b.pd, tx = cl(mx + 18, 8, W - 224), ty = cl(my - 18, 8, H - 105);
+    c.fillStyle = 'rgba(8,4,18,0.96)';
+    c.beginPath(); c.roundRect(tx, ty, 216, 92, 10); c.fill();
+    c.strokeStyle = 'rgba(161,54,170,0.45)'; c.lineWidth = 1; c.stroke();
+    c.font = '600 14px "Space Grotesk", sans-serif'; c.fillStyle = '#fff'; c.textAlign = 'left'; c.textBaseline = 'top';
+    c.fillText(pd.name, tx + 14, ty + 12);
+    c.font = '12px "Figtree", sans-serif'; c.fillStyle = '#d46be0';
+    c.fillText(pd.price, tx + 14, ty + 34);
+    c.font = '11px "Figtree", sans-serif'; c.fillStyle = 'rgba(255,255,255,0.55)';
+    c.fillText(pd.developer, tx + 14, ty + 52);
+    c.font = '10px "Figtree", sans-serif'; c.fillStyle = 'rgba(255,255,255,0.35)';
+    c.fillText(pd.location, tx + 14, ty + 74);
+  }
+
+  function rsz() {
+    dpr = Math.min(window.devicePixelRatio || 1, DPR_MAX);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    sc = cl(Math.min(W, H) * 0.048, 24, 150);
+    mkStat();
+  }
+  function onM(e) {
+    mx = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    my = e.clientY || (e.touches && e.touches[0].clientY) || 0;
+    if (!canvasEnabled) { hi = -1; document.body.style.cursor = 'auto'; return; }
+    let clst = -1, cd = 70;
+    for (let i = 0; i < B.length; i++) {
+      const b = B[i]; if (!b.isProject) continue;
+      const tp = scr(b.x + b.w / 2, b.h + 0.25, b.z + b.d / 2);
+      const dx = mx - tp.sx, dy = my - tp.sy, d = Math.sqrt(dx * dx + dy * dy);
+      if (d < cd) { cd = d; clst = i; }
+    }
+    const out = mx < 0 || mx > W || my < 0 || my > H;
+    hi = out ? -1 : clst;
+    document.body.style.cursor = (out || clst < 0) ? 'auto' : 'pointer';
+  }
+  function frm(now) {
+    requestAnimationFrame(frm);
+    const e = now - lft; if (e < FI) return;
+    lft = now - (e % FI); t += 0.016;
+    ctx.clearRect(0, 0, W, H);
+    if (sCv) ctx.drawImage(sCv, 0, 0, W, H);
+    drSpark(ctx, t); drFog(ctx, t); drPart(ctx); drCar(ctx); drBeac(ctx, t); drTip(ctx);
+  }
+
+  gen(); rsz(); requestAnimationFrame(frm);
+  document.addEventListener('mousemove', onM);
+  document.addEventListener('touchstart', onM, { passive: true });
+  window.addEventListener('resize', rsz);
+  window.addEventListener('scroll', () => {
+    canvasEnabled = document.documentElement.scrollTop < window.innerHeight * 0.85;
+  }, { passive: true });
+})();
+
+/* ============================================================
+   INTERACTIONS
+   ============================================================ */
+;(function() {
+  'use strict';
+
+  // 1. Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  if (navbar) {
+    window.addEventListener('scroll', function() {
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+  }
+
+  // 2. Scroll reveal
+  const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
+
+  // 3. Counter animation
+  function animateCounter(el) {
+    const text = el.textContent;
+    const match = text.match(/[\d,]+/);
+    if (!match) return;
+    const target = parseInt(match[0].replace(/,/g, ''));
+    const suffix = text.replace(match[0], '').trim();
+    const duration = 2000;
+    const start = performance.now();
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+      el.textContent = current.toLocaleString('en-IN') + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  const counterObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-count]').forEach(function(el) {
+    counterObserver.observe(el);
+  });
+
+  // 4. Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // 5. Active nav highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sectionObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(function(link) {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
+  sections.forEach(function(s) { sectionObserver.observe(s); });
+
+  // 6. Project grid generator
+  const projects = [
+    {name:'Godrej Varanya',city:'Kharghar, Navi Mumbai',price:'₹2.14-4.18 Cr',dev:'Godrej Properties',type:'Luxury',sales:'₹2,000 Cr+ Phase 1'},
+    {name:'DLF The Westpark',city:'Andheri, Mumbai',price:'₹4.8-9 Cr',dev:'DLF Ltd.',type:'Premium Luxury',sales:'₹2,300 Cr · Sold out in 1 week'},
+    {name:'Godrej Woodscapes',city:'Whitefield, Bengaluru',price:'₹1.74-4.72 Cr',dev:'Godrej Properties',type:'Luxury',sales:'2,000+ units · 28-acre forest theme'},
+    {name:'DLF Privana North',city:'Gurugram',price:'₹6.7-7 Cr+',dev:'DLF Ltd.',type:'Luxury',sales:'₹11,000 Cr · 1,164 units in 1 week'},
+    {name:'Godrej Trilogy',city:'Worli, Mumbai',price:'₹17.5 Cr+',dev:'Godrej Properties',type:'Ultra-Luxury',sales:'₹2,000 Cr Phase 1'},
+    {name:'Lodha Malabar',city:'Malabar Hill, Mumbai',price:'₹135 Cr+',dev:'Lodha Group',type:'Ultra-Luxury',sales:'₹270 Cr for 2 units'},
+    {name:'Hiranandani Fortune',city:'Panvel, Navi Mumbai',price:'₹1.21-3.17 Cr',dev:'Hiranandani Group',type:'Premium-Mid',sales:'2,200+ homes · 588-acre township'},
+    {name:'Godrej Reserve',city:'Devanahalli, Bengaluru',price:'₹30 L - 1.5 Cr+',dev:'Godrej Properties',type:'Luxury Plotted',sales:'950 plots · 92.7 acres'},
+    {name:'Trump Residences',city:'Gurugram',price:'₹5-15 Cr',dev:'Tribeca/Smartworld',type:'Ultra-Luxury',sales:'₹3,250 Cr · Sold out launch day'},
+    {name:'DLF The Dahlias',city:'Gurugram',price:'₹70 Cr avg',dev:'DLF Ltd.',type:'Super-Luxury',sales:'₹13,744 Cr FY25'},
+    {name:'Swaminarayan City',city:'Dombivli, Mumbai',price:'₹45-70.5 L',dev:'Swaminarayan LS',type:'Mid-Range',sales:'550 units · 148 acres'},
+    {name:'Godrej Ananda',city:'Bagalur, Bengaluru',price:'₹82 L - 1.47 Cr',dev:'Godrej Properties',type:'Premium',sales:'3,000+ units'},
+    {name:'Rustomjee Crescent',city:'Khar, Mumbai',price:'₹5-15 Cr',dev:'Rustomjee Group',type:'Luxury',sales:'New Launch 2026'},
+    {name:'UniMax Pride',city:'Taloja, Navi Mumbai',price:'₹17.9-47.33 L',dev:'UniMax World',type:'Affordable',sales:'124 units · Entry-level'},
+    {name:'Signature Global',city:'Gurugram',price:'₹50 L - 1.5 Cr',dev:'Signature Global',type:'Premium-Mid',sales:'Large format township'},
+    {name:'Godrej Urban Park',city:'Kharghar, Navi Mumbai',price:'₹1.48-2.85 Cr',dev:'Godrej Properties',type:'Premium',sales:'Near completion'},
+    {name:'Oberoi Esquire',city:'Goregaon, Mumbai',price:'₹8-15 Cr',dev:'Oberoi Realty',type:'Premium Luxury',sales:'Premium Goregaon'},
+    {name:'Piramal Mahalaxmi',city:'Mahalaxmi, Mumbai',price:'₹10-25 Cr',dev:'Piramal Group',type:'Ultra-Luxury',sales:'Landmark project'},
+    {name:'M3M Golf Hills',city:'Gurugram',price:'₹2-8 Cr',dev:'M3M Group',type:'Luxury',sales:'Golf-course view'},
+    {name:'Wadhwa Wise City',city:'Panvel, Navi Mumbai',price:'₹50 L - 1.5 Cr',dev:'Wadhwa Group',type:'Mid-Range',sales:'405 flats leased to NMIA'},
+  ];
+
+  const typeColors = {
+    'Ultra-Luxury':'#8b5cf6','Super-Luxury':'#7c3aed','Premium Luxury':'#f59e0b',
+    'Luxury':'#10b981','Luxury Plotted':'#06b6d4','Premium':'#3b82f6',
+    'Premium-Mid':'#f97316','Mid-Range':'#6b7280','Affordable':'#ef4444',
+  };
+
+  const grid = document.getElementById('projectGrid');
+  if (grid) {
+    projects.forEach(function(p) {
+      const card = document.createElement('div');
+      card.className = 'project-card reveal';
+      const badgeColor = typeColors[p.type] || '#6b7280';
+      card.innerHTML =
+        '<span class="project-badge" style="background:' + badgeColor + '">' + p.type + '</span>' +
+        '<h3 class="project-name">' + p.name + '</h3>' +
+        '<p class="project-dev">' + p.dev + '</p>' +
+        '<p class="project-city">' + p.city + '</p>' +
+        '<p class="project-price">' + p.price + '</p>' +
+        '<p class="project-sales">' + p.sales + '</p>';
+      grid.appendChild(card);
+    });
+    document.querySelectorAll('.project-card.reveal').forEach(function(el) {
+      revealObserver.observe(el);
+    });
+  }
+
+  // Console easter egg
+  console.log('%c ANAROCK Intelligence ', 'background: #a136aa; color: white; font-size: 20px; font-weight: bold; padding: 10px 20px; border-radius: 4px;');
+  console.log('%c Built for strategic intelligence ', 'color: #a136aa; font-size: 12px;');
+})();
+</script>
+
+</body>
+</html>
