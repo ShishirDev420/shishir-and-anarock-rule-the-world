@@ -218,7 +218,7 @@ section { position: relative; z-index: 3; width: 100%; }
   z-index: 1;
   filter: blur(25px);
   pointer-events: none;
-  animation: glowPulse 5s ease-in-out infinite alternate;
+  will-change: transform, opacity;
 }
 .hero-logo-glow-accent {
   position: absolute;
@@ -232,7 +232,7 @@ section { position: relative; z-index: 3; width: 100%; }
   z-index: 1;
   filter: blur(20px);
   pointer-events: none;
-  animation: glowPulse 8s ease-in-out infinite alternate-reverse;
+  will-change: transform, opacity;
 }
 /* Futuristic 3D Tilted Concentric Orbits (Pushed back in Z-space by 200px to sit safely behind the logo text) */
 .hero-logo-orbital-tilt-1 {
@@ -1788,15 +1788,24 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
   const orbitalOne = document.querySelector('.hero-logo-orbital-tilt-1');
   const orbitalTwo = document.querySelector('.hero-logo-orbital-tilt-2');
   const orbitalThree = document.querySelector('.hero-logo-orbital-tilt-3');
+  const hero = document.querySelector('.hero');
 
-  if (heroLogoWrapper && heroLogoSvg) {
-    // 3D Mouse-move Parallax
-    document.querySelector('.hero').addEventListener('mousemove', function(e) {
+  if (heroLogoWrapper && heroLogoSvg && hero) {
+    const glowEls = [heroLogoGlow, heroLogoGlowAccent].filter(Boolean);
+    const orbitalEls = [orbitalOne, orbitalTwo, orbitalThree].filter(Boolean);
+    let heroLogoIntroComplete = false;
+    let lastHeroPointer = null;
+
+    gsap.set(heroLogoSvg, { z: 30, transformPerspective: 1000, transformOrigin: 'center center', force3D: true });
+    gsap.set(glowEls, { transformOrigin: 'center center', force3D: true });
+    gsap.set(orbitalEls, { force3D: true });
+
+    function applyHeroParallax(pointer) {
       const rect = heroLogoWrapper.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-      const mouseX = e.clientX - centerX;
-      const mouseY = e.clientY - centerY;
+      const mouseX = pointer.clientX - centerX;
+      const mouseY = pointer.clientY - centerY;
 
       // Calculate tilt angles (Hooke's Law Spring approximation)
       const tiltX = (mouseY / window.innerHeight) * -18; // Max tilt 18 deg
@@ -1817,29 +1826,34 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
         rotateY: tiltY,
         x: imgDX,
         y: imgDY,
+        z: 30,
         transformPerspective: 1000,
         duration: 0.6,
         ease: 'power2.out',
         overwrite: 'auto'
       });
 
-      gsap.to(heroLogoGlow, {
-        x: glowDX,
-        y: glowDY,
-        duration: 0.8,
-        ease: 'power1.out',
-        overwrite: 'auto'
-      });
+      if (heroLogoGlow) {
+        gsap.to(heroLogoGlow, {
+          x: glowDX,
+          y: glowDY,
+          duration: 0.8,
+          ease: 'power1.out',
+          overwrite: 'auto'
+        });
+      }
 
-      gsap.to(heroLogoGlowAccent, {
-        x: glowDX * 1.4,
-        y: glowDY * 1.4,
-        duration: 1.0,
-        ease: 'power1.out',
-        overwrite: 'auto'
-      });
+      if (heroLogoGlowAccent) {
+        gsap.to(heroLogoGlowAccent, {
+          x: glowDX * 1.4,
+          y: glowDY * 1.4,
+          duration: 1.0,
+          ease: 'power1.out',
+          overwrite: 'auto'
+        });
+      }
 
-      gsap.to([orbitalOne, orbitalTwo, orbitalThree], {
+      gsap.to(orbitalEls, {
         x: orbitDX,
         y: orbitDY,
         z: -200,
@@ -1854,24 +1868,35 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
         ease: 'power2.out',
         overwrite: 'auto'
       });
+    }
+
+    // Hold mouse tracking until the intro finishes so startup tweens cannot fight parallax transforms.
+    hero.addEventListener('mousemove', function(e) {
+      lastHeroPointer = { clientX: e.clientX, clientY: e.clientY };
+      if (!heroLogoIntroComplete) return;
+      applyHeroParallax(lastHeroPointer);
     });
 
     // Reset when mouse leaves hero
-    document.querySelector('.hero').addEventListener('mouseleave', function() {
+    hero.addEventListener('mouseleave', function() {
+      lastHeroPointer = null;
+      if (!heroLogoIntroComplete) return;
+
       gsap.to(heroLogoSvg, {
         rotateX: 0,
         rotateY: 0,
         x: 0,
         y: 0,
+        z: 30,
         duration: 1.2,
         ease: 'power3.out',
         overwrite: 'auto'
       });
 
-      gsap.to([heroLogoGlow, heroLogoGlowAccent], { x: 0, y: 0, duration: 1.2, ease: 'power3.out', overwrite: 'auto' });
-      gsap.to(orbitalOne, { x: 0, y: 0, z: -200, rotateX: 65, rotateY: 15, duration: 1.2, ease: 'power3.out', overwrite: 'auto' });
-      gsap.to(orbitalTwo, { x: 0, y: 0, z: -200, rotateX: -40, rotateY: -20, duration: 1.2, ease: 'power3.out', overwrite: 'auto' });
-      gsap.to(orbitalThree, { x: 0, y: 0, z: -200, rotateX: 20, rotateY: 40, duration: 1.2, ease: 'power3.out', overwrite: 'auto' });
+      gsap.to(glowEls, { x: 0, y: 0, duration: 1.2, ease: 'power3.out', overwrite: 'auto' });
+      if (orbitalOne) gsap.to(orbitalOne, { x: 0, y: 0, z: -200, rotateX: 65, rotateY: 15, duration: 1.2, ease: 'power3.out', overwrite: 'auto' });
+      if (orbitalTwo) gsap.to(orbitalTwo, { x: 0, y: 0, z: -200, rotateX: -40, rotateY: -20, duration: 1.2, ease: 'power3.out', overwrite: 'auto' });
+      if (orbitalThree) gsap.to(orbitalThree, { x: 0, y: 0, z: -200, rotateX: 20, rotateY: 40, duration: 1.2, ease: 'power3.out', overwrite: 'auto' });
     });
 
     // Shifting metallic plum/purple gradient loop on the signature diagonal leg
@@ -1886,7 +1911,45 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
     });
 
     // Premium Staggered Vector Intro Animation Sequence
-    const tl = gsap.timeline({ delay: 0.4 });
+    const tl = gsap.timeline({
+      delay: 0.4,
+      onComplete: function() {
+        heroLogoIntroComplete = true;
+
+        gsap.to(heroLogoWrapper, {
+          y: -7,
+          rotation: 0.4,
+          duration: 4.0,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut'
+        });
+
+        if (heroLogoGlow) {
+          gsap.to(heroLogoGlow, {
+            opacity: 0.75,
+            scale: 1.06,
+            duration: 5.0,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+          });
+        }
+
+        if (heroLogoGlowAccent) {
+          gsap.to(heroLogoGlowAccent, {
+            opacity: 0.82,
+            scale: 1.04,
+            duration: 8.0,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+          });
+        }
+
+        if (lastHeroPointer) applyHeroParallax(lastHeroPointer);
+      }
+    });
 
     // 0. Fade in and spring-scale the official logo rounded container card
     tl.fromTo('.hero-logo-wrapper',
@@ -1941,26 +2004,14 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
     // 7. Reveal the main tagline sharp and solid
     tl.to('.logo-tagline-main', { opacity: 1, duration: 0.8 }, '-=0.65');
 
-    // 8. Gentle organic floating animation loop starting after intro completes
-    tl.add(() => {
-      gsap.to('.hero-logo-svg', {
-        y: '+=7',
-        rotation: '+=0.4',
-        duration: 4.0,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
-      });
-    });
-
-    // 9. Fade and scale up background orbital rings and glows in background
-    tl.fromTo([orbitalOne, orbitalTwo, orbitalThree],
+    // 8. Fade and scale up background orbital rings and glows in background
+    tl.fromTo(orbitalEls,
       { opacity: 0, scale: 0.65, z: -200 },
       { opacity: 1, scale: 1, z: -200, duration: 2.0, ease: 'power3.out' },
       '0.15'
     );
 
-    tl.fromTo([heroLogoGlow, heroLogoGlowAccent],
+    tl.fromTo(glowEls,
       { opacity: 0, scale: 0.8 },
       { opacity: 1, scale: 1, duration: 2.0, ease: 'power2.out' },
       '0.1'
