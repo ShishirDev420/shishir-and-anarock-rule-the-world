@@ -823,6 +823,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
 .rera-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 .rera-doc-pane { background: #fff; color: #111; border-radius: 12px; height: 350px; overflow-y: auto; padding: 24px; font-family: 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.5; border: 4px solid #eaeaea; position: relative; }
 .rera-scanner-line { position: absolute; left: 0; right: 0; height: 4px; background: rgba(212,107,224,0.7); box-shadow: 0 0 15px #d46be0; top: 0; display: none; pointer-events: none; z-index: 10; }
+@keyframes reraScanner { 0% { transform: translateY(0); } 50% { transform: translateY(340px); } 100% { transform: translateY(0); } }
 .rera-highlight-risk { background: rgba(244, 67, 54, 0.22); border: 1px dashed #f44336; padding: 2px; }
 .rera-report-pane { display: flex; flex-direction: column; gap: 16px; }
 .rera-score-dial { width: 90px; height: 90px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 24px; font-weight: 700; color: #fff; margin: 0 auto; position: relative; transition: all 1s ease; }
@@ -856,7 +857,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
     <a href="#" class="nav-logo-container" style="display: flex; align-items: center; gap: 10px;">
       <img class="anarock-logo-img-vector" src="anarock_logo_official_white.svg" alt="ANAROCK" style="height: 36px; width: auto; display: block;" />
     </a>
-    
+
     <div class="nav-links">
       <a href="#company">Overview</a>
       <a href="#projects">Landmarks</a>
@@ -971,7 +972,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
         <div class="metric-value" data-count="51500" style="font-size: clamp(40px, 5.5vw, 76px); margin-bottom: 20px;">₹51,500+ Cr</div>
         <div class="metric-label" style="font-size: 13px; letter-spacing: 3px;">Facilitated Cumulative Sales</div>
       </div>
-      
+
       <!-- Staggered Smaller Metrics -->
       <div class="metric-card reveal">
         <div class="specular-highlight"></div>
@@ -983,7 +984,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
         <div class="metric-value" data-count="80000">80,000+</div>
         <div class="metric-label">Channel Partners</div>
       </div>
-      
+
       <!-- Wide Summary Card -->
       <div class="metric-card bento-card-wide reveal">
         <div class="specular-highlight"></div>
@@ -1006,7 +1007,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
           <li><strong>₹200 Cr</strong> raised from 360 ONE Asset (Feb 2024)</li>
         </ul>
       </div>
-      
+
       <div class="info-card reveal">
         <div class="specular-highlight"></div>
         <div class="info-card-icon">📊</div>
@@ -1019,7 +1020,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
           <li><strong>PMES Vertical</strong> — ₹125 Cr Target <span class="badge-corrected">10x Correction</span></li>
         </ul>
       </div>
-      
+
       <div class="info-card reveal">
         <div class="specular-highlight"></div>
         <div class="info-card-icon">🏢</div>
@@ -1043,29 +1044,13 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
 <section id="projects" class="solid-alt">
   <div class="section-inner">
     <div class="section-label">02 · Landmark Projects</div>
-    <h2 class="section-title">20 Landmarks. 90,000 Homes. $12 Billion.</h2>
-    <p style="margin-bottom:30px;">The skyline of modern India, powered by Anarock. Hover over the interactive real-time 3D cityscape viewport below to explore active projects.</p>
-    
+    <h2 class="section-title">Landmark Hubs. 90,000 Homes. $12 Billion.</h2>
+    <p style="margin-bottom:30px;">The operational footprint of modern India, powered by Anarock. Hover across the India globe to explore active hubs, landmark mandates, and market intelligence.</p>
+
     <!-- REAL-TIME 3D INTERACTIVE CITYSCAPE VIEWPORT -->
     <div id="threejs-cityscape" class="reveal">
       <div id="threejs-tooltip" class="three-tooltip"></div>
-      <div class="three-instructions">🖱️ Move mouse to hover &amp; highlight projects · Click to scroll to details</div>
-    </div>
-
-    <!-- 3D Mockups Display Gallery -->
-    <div class="grid-2 reveal-grid" style="margin-top: 40px; margin-bottom: 50px;">
-      <div class="card reveal" style="padding: 20px; text-align: center;">
-        <div class="specular-highlight"></div>
-        <img src="luxury_isometric_tower.png" alt="Piramal Mahalaxmi &amp; Lodha Malabar (Mumbai)" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);" />
-        <h4 style="margin-bottom: 8px;">Piramal Mahalaxmi &amp; Lodha Malabar (Mumbai)</h4>
-        <p style="font-size: 13px; color: var(--text-muted);">Real-world 3D architectural mockup representing the high-density super-luxury skyscrapers delivered in South Mumbai, fully commercialized under Anarock's exclusive portfolio sales mandate.</p>
-      </div>
-      <div class="card reveal" style="padding: 20px; text-align: center;">
-        <div class="specular-highlight"></div>
-        <img src="luxury_isometric_villas.png" alt="Godrej Reserve (Bengaluru)" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);" />
-        <h4 style="margin-bottom: 8px;">Godrej Reserve (Devanahalli, Bengaluru)</h4>
-        <p style="font-size: 13px; color: var(--text-muted);">Real-world 3D layout master plan of the 92.7-acre forest-themed luxury plotted villa estate, successfully sold out under Anarock's exclusive regional marketing campaign.</p>
-      </div>
+      <div class="three-instructions">Move mouse to hover India hubs · Click to scroll to details</div>
     </div>
 
     <div class="project-grid reveal-grid" id="projectGrid"></div>
@@ -1095,7 +1080,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
           <li><strong>Referral Genie</strong> — Automated referral campaigns for existing buyers</li>
         </ul>
       </div>
-      
+
       <div class="ai-card ai-card-astra reveal">
         <div class="specular-highlight"></div>
         <div class="ai-card-icon">⭐</div>
@@ -1109,7 +1094,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
         </ul>
       </div>
     </div>
-    
+
     <div class="ai-card ai-card-cp360 reveal">
       <div class="specular-highlight"></div>
       <div class="ai-card-icon">🔄</div>
@@ -1139,7 +1124,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
         <h3 class="gap-title">WhatsApp-Native AI CRM</h3>
         <p class="gap-description">76% of Indian property buyers operate on WhatsApp. Existing systems rely on generic email/SMS, yielding cold pipelines. Developing a custom, edge-hosted SLM WhatsApp CRM closes the gap.</p>
         <div class="gap-competitors"><strong>Competitor Tech:</strong> Kraya AI (starts at ₹2,999/mo per seat Chrome extension).</div>
-        
+
         <!-- Playbook Drawer -->
         <div id="pb-whatsapp" class="gap-playbook">
           <h4 style="color: var(--brand-purple-light); font-family: var(--font-head); margin-bottom: 12px;">ANAROCK 10x Playbook &amp; Moat:</h4>
@@ -1150,14 +1135,14 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
           <p style="font-size: 13px; color: var(--text-muted);">A 35% conversion lift and a 55% reduction in traditional call drop rates by shifting focus from voice agents to automated WhatsApp workflows.</p>
         </div>
       </div>
-      
+
       <!-- Gap 2 -->
       <div class="gap-item gap-critical reveal" onclick="togglePlaybook('pb-conversation', this)">
         <span class="gap-severity">Critical</span>
         <h3 class="gap-title">Conversation Intelligence Moat</h3>
         <p class="gap-description">Lack of real-time call recording transcription, automatic qualification, and coaching signals. Implementing voice analysis creates immediate efficiency.</p>
         <div class="gap-competitors"><strong>Market Precedent:</strong> Prateek Group (partnered with Voice AI, cutting lead response times and lifting conversion from 4-6% to 14-18%).</div>
-        
+
         <!-- Playbook Drawer -->
         <div id="pb-conversation" class="gap-playbook">
           <h4 style="color: var(--brand-purple-light); font-family: var(--font-head); margin-bottom: 12px;">ANAROCK 10x Playbook &amp; Moat:</h4>
@@ -1168,14 +1153,14 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
           <p style="font-size: 13px; color: var(--text-muted);">Real-time alerts to managers indicating which brokers are failing to disclose RERA registration IDs, keeping compliance at 100%.</p>
         </div>
       </div>
-      
+
       <!-- Gap 3 -->
       <div class="gap-item gap-high reveal" onclick="togglePlaybook('pb-pricing', this)">
         <span class="gap-severity">High</span>
         <h3 class="gap-title">Transaction Pricing &amp; AVM Moat</h3>
         <p class="gap-description">No automated geocoded checking of actual government registration indices (IGRS) compared to portal quotes. Real asking prices are often inflated by 10-25%.</p>
         <div class="gap-competitors"><strong>Competitor Tech:</strong> Magicbricks PropWorth (claims 98% accuracy but utilizes listings and broker opinions, not stamp duty registrations).</div>
-        
+
         <!-- Playbook Drawer -->
         <div id="pb-pricing" class="gap-playbook">
           <h4 style="color: var(--brand-purple-light); font-family: var(--font-head); margin-bottom: 12px;">ANAROCK 10x Playbook &amp; Moat:</h4>
@@ -1186,14 +1171,14 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
           <p style="font-size: 13px; color: var(--text-muted);">Protects buyers from artificial price inflation and safeguards transactions from severe Section 50C and 56(2)(x) tax penalties.</p>
         </div>
       </div>
-      
+
       <!-- Gap 4 -->
       <div class="gap-item gap-high reveal" onclick="togglePlaybook('pb-dashboard', this)">
         <span class="gap-severity">High</span>
         <h3 class="gap-title">Management NLQ Dashboard</h3>
         <p class="gap-description">No proprietary executive data query console. Leadership should query "Show Panvel vs Taloja absorption trends" and receive instant geocoded reports.</p>
         <div class="gap-competitors"><strong>Competitor Tech:</strong> Builtrix, Fundrise RealAI.</div>
-        
+
         <!-- Playbook Drawer -->
         <div id="pb-dashboard" class="gap-playbook">
           <h4 style="color: var(--brand-purple-light); font-family: var(--font-head); margin-bottom: 12px;">ANAROCK 10x Playbook &amp; Moat:</h4>
@@ -1204,14 +1189,14 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
           <p style="font-size: 13px; color: var(--text-muted);">Reduces manual report compilation overhead to zero, enabling pricing strategy pivots in minutes.</p>
         </div>
       </div>
-      
+
       <!-- Gap 5 -->
       <div class="gap-item gap-medium reveal" onclick="togglePlaybook('pb-rera', this)">
         <span class="gap-severity">Medium</span>
         <h3 class="gap-title">RERA Document Compliance AI</h3>
         <p class="gap-description">Manual builder contract and legal review takes up to 60 minutes. An in-house document extraction model can parse clauses, flag compliance risks, and check files in 2 minutes.</p>
         <div class="gap-competitors"><strong>Competitor Tech:</strong> Lexlegis.ai (generalist legal tool), Reradesk (compliance OS for developer filings).</div>
-        
+
         <!-- Playbook Drawer -->
         <div id="pb-rera" class="gap-playbook">
           <h4 style="color: var(--brand-purple-light); font-family: var(--font-head); margin-bottom: 12px;">ANAROCK 10x Playbook &amp; Moat:</h4>
@@ -1222,14 +1207,14 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
           <p style="font-size: 13px; color: var(--text-muted);">Mitigates legal risks for buyers and institutional investors, driving rapid, certified checkout conversions.</p>
         </div>
       </div>
-      
+
       <!-- Gap 6 -->
       <div class="gap-item gap-medium reveal" onclick="togglePlaybook('pb-escrow', this)">
         <span class="gap-severity">Medium</span>
         <h3 class="gap-title">Escrow Telemetry &amp; Financial Audit Moat</h3>
         <p class="gap-description">Developers siphon funds out of construction budgets. Tracking corporate escrow API streams reconciles physical project speed against capital disbursements.</p>
         <div class="gap-competitors"><strong>Competitor Tech:</strong> Basic escrow account ledgers. No automated matching engine.</div>
-        
+
         <!-- Playbook Drawer -->
         <div id="pb-escrow" class="gap-playbook">
           <h4 style="color: var(--brand-purple-light); font-family: var(--font-head); margin-bottom: 12px;">ANAROCK 10x Playbook &amp; Moat:</h4>
@@ -1240,14 +1225,14 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
           <p style="font-size: 13px; color: var(--text-muted);">Establishes a highly defensible platform lock-in for private equity lenders and custodial banking networks.</p>
         </div>
       </div>
-      
+
       <!-- Gap 7 -->
       <div class="gap-item gap-medium reveal" onclick="togglePlaybook('pb-nri', this)">
         <span class="gap-severity">Medium</span>
         <h3 class="gap-title">NRI Compliance &amp; Transaction Portal</h3>
         <p class="gap-description">35 million Indian diaspora represent a massive $135B remittance market. High-ticket remote bookings require FEMA checkmarks and digital POA solutions.</p>
         <div class="gap-competitors"><strong>Competitor Tech:</strong> Bennet &amp; Bernard (holiday home developer reporting 42% remote NRI booking success).</div>
-        
+
         <!-- Playbook Drawer -->
         <div id="pb-nri" class="gap-playbook">
           <h4 style="color: var(--brand-purple-light); font-family: var(--font-head); margin-bottom: 12px;">ANAROCK 10x Playbook &amp; Moat:</h4>
@@ -1308,7 +1293,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
                     <span>🔋 100%</span>
                   </div>
                 </div>
-                
+
                 <!-- WhatsApp Header -->
                 <div class="wa-header" style="padding: 8px 12px;">
                   <div class="wa-avatar" style="width: 28px; height: 28px; font-size: 12px;">A</div>
@@ -1317,7 +1302,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
                     <div class="wa-chat-status" style="font-size: 9px;">Online</div>
                   </div>
                 </div>
-                
+
                 <!-- WhatsApp Chat Feed -->
                 <div class="wa-chat-bg" id="wa-chat-feed" style="padding: 10px; gap: 8px; overflow-y: auto;">
                   <div class="wa-bubble wa-bubble-bot" style="font-size: 11.5px; padding: 8px 10px;">
@@ -1325,7 +1310,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
                     <div class="wa-bubble-time" style="font-size: 8px;">10:32 AM</div>
                   </div>
                 </div>
-                
+
                 <!-- Clickable Choices -->
                 <div id="wa-choices-container" style="background: rgba(15,10,22,0.9); padding: 8px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; gap: 6px;">
                   <button class="wa-choice-btn" onclick="sendMockWhatsAppMessage('Navi Mumbai, budget ₹1.2 Cr', 'Great! Searching our database... matches found:<br>🏠 <strong>Hiranandani Fortune City</strong> (Panvel · ₹1.21 Cr)<br>🏠 <strong>Paradise Sai World</strong> (Kharghar · ₹95 L). Would you like to schedule a site visit or see the RERA compliance brochure?', this)">Option 1: 2 BHK Navi Mumbai (₹1.2 Cr)</button>
@@ -1376,12 +1361,12 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
                     <span>🔋 100%</span>
                   </div>
                 </div>
-                
+
                 <!-- Portal Header -->
                 <div style="background: rgba(159,82,149,0.15); padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: center;">
                   <span style="font-family: var(--font-head); font-size: 11px; font-weight: 700; color: #fff; letter-spacing: 1px;">ANAROCK GLOBAL PORTAL</span>
                 </div>
-                
+
                 <!-- Main Portal Display -->
                 <div style="padding: 16px; display: flex; flex-direction: column; gap: 14px; flex: 1; overflow-y: auto;">
                   <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 12px; border-radius: 8px; font-size: 12px;">
@@ -1400,7 +1385,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
                   <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 12px; border-radius: 8px; font-size: 12px; position: relative;">
                     <div style="color: var(--text-dim); margin-bottom: 4px; font-size: 10px;">REMOTE POWER OF ATTORNEY (PoA)</div>
                     <div style="font-weight:600; margin-bottom: 8px;">Video-Signature Verification</div>
-                    
+
                     <!-- Micro live cam preview -->
                     <div id="nri-video-preview" style="display:none; width: 100%; height: 90px; border-radius: 6px; background: #000; border: 1px solid var(--brand-purple); position: relative; overflow: hidden; margin-bottom: 10px;">
                       <div class="rera-scanner-line" id="nri-scanner-line" style="display:block; animation: reraScanner 2s infinite;"></div>
@@ -1428,7 +1413,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
           <div>
             <h3 style="font-family: var(--font-head); color: #fff; margin-bottom: 16px;">Automated Valuation Model (AVM) Engine</h3>
             <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 14.5px;">Legacy portals rely on broker listing prices which are artificially inflated by 10-25%. The <strong>Anarock AVM</strong> calculates values based on actual registered stamp duty records (IGRS-Sync). Adjust the slider to see circle-rate variances and tax penalties.</p>
-            
+
             <div style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); padding: 24px; border-radius: 16px; margin-bottom: 20px;">
               <label style="display: flex; justify-content: space-between; font-family: var(--font-head); font-size: 13px; color: #fff; margin-bottom: 12px;">
                 <span>PROPOSED TRANSACTION PRICE (₹ / sq. ft.)</span>
@@ -1443,11 +1428,11 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
               <p style="font-size: 12.5px; color: var(--text-body); margin: 0;" id="avm-tax-desc">Proposed transaction price is below the government Circle Rate of ₹10,000. Under Section 56(2)(x), the buyer will face heavy taxes on the difference of ₹2,000/sq.ft as "Income from Other Sources". The seller will be taxed under Section 50C based on the Circle Rate.</p>
             </div>
           </div>
-          
+
           <div>
             <div class="avm-chart-container">
               <h4 style="font-family: var(--font-head); font-size: 13px; color: #fff; margin-bottom: 16px;">Locality Price Comparison (Panvel, Navi Mumbai)</h4>
-              
+
               <div class="avm-chart">
                 <!-- Bar 1: Circle Rate -->
                 <div class="avm-chart-bar">
@@ -1493,12 +1478,12 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
             </div>
             <button class="btn-primary" id="btn-scan-rera" onclick="triggerReraScan()" style="width: 100%; margin-top: 16px;">Scan Agreement for Regulatory Risks</button>
           </div>
-          
+
           <div>
             <div class="rera-report-pane">
               <h3 style="font-family: var(--font-head); color: #fff; font-size: 16px;">RERA Section 18 Compliance Audit</h3>
               <p style="color: var(--text-muted); font-size: 13.5px;">RERA mandates complete parity for delayed interest penalties. Builders cannot charge 18% while compensating buyers at a mere fraction of a percent (₹5/sqft/mo = ~1.2% p.a.).</p>
-              
+
               <div style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; text-align: center;">
                 <div class="rera-score-dial" id="rera-dial">--</div>
                 <div style="font-family: var(--font-head); font-size: 11px; font-weight: 500; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-top: 10px;">BBA Compliance Grade</div>
@@ -1522,6 +1507,120 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
 
 <!-- Visual Gap -->
 <section class="visual-gap"></section>
+
+<!-- Section 06: NRI Opportunity -->
+<section id="nri" class="solid-alt">
+  <div class="section-inner">
+    <div class="section-label">06 · NRI Opportunity</div>
+    <h2 class="section-title">Own India's Growth Story, From Anywhere.</h2>
+    <p style="margin-bottom:36px; max-width: 760px;">For NRIs, OCIs, HNIs, and global Indians, Indian real estate is no longer only a homecoming purchase. It is a regulated, rupee-linked asset decision that needs trusted discovery, remote due diligence, transaction coordination, and post-sales confidence.</p>
+
+    <div class="grid-3 reveal-grid" style="margin-bottom: 32px;">
+      <div class="metric-card reveal">
+        <div class="metric-value">35M+</div>
+        <div class="metric-label">Overseas Indians</div>
+      </div>
+      <div class="metric-card reveal">
+        <div class="metric-value">$120B</div>
+        <div class="metric-label">India Remittances · 2023</div>
+      </div>
+      <div class="metric-card reveal">
+        <div class="metric-value">19</div>
+        <div class="metric-label">India + GCC Cities</div>
+      </div>
+    </div>
+
+    <div class="grid-2 reveal-grid" style="margin-bottom: 32px;">
+      <div class="info-card reveal">
+        <div class="specular-highlight"></div>
+        <h3 class="info-card-title">What The NRI Buyer Needs</h3>
+        <ul class="info-card-list">
+          <li><strong>Curated project discovery</strong> by city, budget, timeline, purpose, and country of residence.</li>
+          <li><strong>Remote trust stack</strong> covering RERA checks, developer track record, virtual walkthroughs, price sheets, and construction status.</li>
+          <li><strong>Transaction readiness</strong> around KYC, NRE/NRO payment guidance, home-loan coordination, Power of Attorney, and registration support.</li>
+          <li><strong>Post-purchase confidence</strong> through milestone updates, collections reminders, possession coordination, interiors, rentals, and resale support.</li>
+        </ul>
+      </div>
+
+      <div class="info-card reveal">
+        <div class="specular-highlight"></div>
+        <h3 class="info-card-title">How ANAROCK.AI Can Capture It</h3>
+        <ul class="info-card-list">
+          <li><strong>AI concierge intake</strong> qualifies country, time zone, budget currency, preferred city, intent, and purchase timeline.</li>
+          <li><strong>Advisor handoff</strong> routes high-intent buyers to ANAROCK specialists with context already captured.</li>
+          <li><strong>Remote buying cockpit</strong> packages shortlist, RERA checklist, document status, call notes, site-visit links, and payment milestones.</li>
+          <li><strong>Lead revival</strong> reactivates dormant diaspora leads with city-specific market updates and personalized inventory nudges.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nri-pain-grid reveal-grid" style="margin-bottom: 44px;">
+      <div class="nri-pain-card reveal">
+        <div class="nri-pain-icon">1</div>
+        <h3 class="nri-pain-name">Discovery</h3>
+        <p class="nri-pain-quote">"I need a shortlist I can trust without flying in first."</p>
+        <p class="nri-pain-description">Match buyers to verified inventory using purpose, city, return horizon, family needs, and preferred transaction speed.</p>
+      </div>
+      <div class="nri-pain-card reveal">
+        <div class="nri-pain-icon">2</div>
+        <h3 class="nri-pain-name">Compliance</h3>
+        <p class="nri-pain-quote">"Tell me what is allowed before I commit capital."</p>
+        <p class="nri-pain-description">Surface FEMA-sensitive checks, RERA records, KYC status, payment routing, tax caveats, and documentation gaps.</p>
+      </div>
+      <div class="nri-pain-card reveal">
+        <div class="nri-pain-icon">3</div>
+        <h3 class="nri-pain-name">Transaction</h3>
+        <p class="nri-pain-quote">"The India-side paperwork is where deals slow down."</p>
+        <p class="nri-pain-description">Coordinate video consultations, family visits, loan partners, PoA workflows, registration milestones, and payment reminders.</p>
+      </div>
+      <div class="nri-pain-card reveal">
+        <div class="nri-pain-icon">4</div>
+        <h3 class="nri-pain-name">Aftercare</h3>
+        <p class="nri-pain-quote">"I need visibility after booking, not just before."</p>
+        <p class="nri-pain-description">Keep buyers updated through construction progress, collections, possession, interiors, rental management, and resale readiness.</p>
+      </div>
+    </div>
+
+    <div class="journey-flow reveal" style="margin-bottom: 44px;">
+      <div class="journey-step">
+        <div class="journey-step-number">01</div>
+        <h3 class="journey-step-title">Capture</h3>
+        <p class="journey-step-desc">AI assistant collects country, time zone, purpose, city, budget, and funding mode.</p>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="journey-step-number">02</div>
+        <h3 class="journey-step-title">Qualify</h3>
+        <p class="journey-step-desc">Astra scores urgency, buying power, city fit, and required advisory support.</p>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="journey-step-number">03</div>
+        <h3 class="journey-step-title">Verify</h3>
+        <p class="journey-step-desc">RERA, document, payment, loan, and compliance checklist moves into one cockpit.</p>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="journey-step-number">04</div>
+        <h3 class="journey-step-title">Close</h3>
+        <p class="journey-step-desc">Advisor coordinates shortlist, walkthroughs, family visits, booking, and registration.</p>
+      </div>
+    </div>
+
+    <div class="stats-banner reveal">
+      <h3 style="font-family: var(--font-head); font-size: 22px; margin-bottom: 14px;">Position ANAROCK as the remote-safe India property desk.</h3>
+      <p style="max-width: 760px; margin: 0 auto 24px; color: var(--text-muted);">The wedge is not another listings page. It is a guided cross-border buying system where ANAROCK.AI handles fast qualification and ANAROCK advisors handle local judgment, transaction confidence, and post-sales execution.</p>
+      <div class="stats-banner-tags">
+        <span class="stats-banner-tag">NRI consultation</span>
+        <span class="stats-banner-tag">Remote site visit</span>
+        <span class="stats-banner-tag">RERA checklist</span>
+        <span class="stats-banner-tag">NRE / NRO guidance</span>
+        <span class="stats-banner-tag">Post-sales cockpit</span>
+      </div>
+      <p style="font-size: 11px; color: var(--text-dim); margin-top: 24px;">Sources: MEA overseas Indian population table; World Bank remittance brief, 2024. Property investments remain subject to market, regulatory, tax, currency, and liquidity risks. NRIs should consult qualified legal, tax, and FEMA advisors before transacting.</p>
+    </div>
+  </div>
+</section>
 
 <!-- Visual Gap -->
 <section class="visual-gap"></section>
@@ -1603,7 +1702,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
+
       card.style.setProperty('--mouse-x', x + 'px');
       card.style.setProperty('--mouse-y', y + 'px');
 
@@ -1647,7 +1746,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
     const suffix = text.replace(match[0], '').trim();
     const duration = 2000;
     const start = performance.now();
-    
+
     function update(now) {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
@@ -1698,7 +1797,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
       const centerY = rect.top + rect.height / 2;
       const mouseX = e.clientX - centerX;
       const mouseY = e.clientY - centerY;
-      
+
       // Calculate tilt angles (Hooke's Law Spring approximation)
       const tiltX = (mouseY / window.innerHeight) * -18; // Max tilt 18 deg
       const tiltY = (mouseX / window.innerWidth) * 18;
@@ -1706,10 +1805,10 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
       // Translate offsets for layered elements to construct parallax
       const imgDX = (mouseX / window.innerWidth) * 15;
       const imgDY = (mouseY / window.innerHeight) * 15;
-      
+
       const glowDX = (mouseX / window.innerWidth) * -10;
       const glowDY = (mouseY / window.innerHeight) * -10;
-      
+
       const orbitDX = (mouseX / window.innerWidth) * 6;
       const orbitDY = (mouseY / window.innerHeight) * 6;
 
@@ -1774,7 +1873,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
       gsap.to(orbitalTwo, { x: 0, y: 0, z: -200, rotateX: -40, rotateY: -20, duration: 1.2, ease: 'power3.out', overwrite: 'auto' });
       gsap.to(orbitalThree, { x: 0, y: 0, z: -200, rotateX: 20, rotateY: 40, duration: 1.2, ease: 'power3.out', overwrite: 'auto' });
     });
-    
+
     // Shifting metallic plum/purple gradient loop on the signature diagonal leg
     gsap.to('#purpleLegGrad stop', {
       stopColor: function(index) {
@@ -1860,7 +1959,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
       { opacity: 1, scale: 1, z: -200, duration: 2.0, ease: 'power3.out' },
       '0.15'
     );
-    
+
     tl.fromTo([heroLogoGlow, heroLogoGlowAccent],
       { opacity: 0, scale: 0.8 },
       { opacity: 1, scale: 1, duration: 2.0, ease: 'power2.out' },
@@ -1897,7 +1996,6 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
     {name:'Godrej Urban Park',city:'Chandivali, Powai, Mumbai',price:'₹1.48-2.85 Cr',dev:'Godrej Properties',type:'Premium',sales:'Near completion (slated for Sept 2026)'},
     {name:'Rustomjee Crescent',city:'Pali Hill, Bandra West, Mumbai',price:'₹5-15 Cr',dev:'Rustomjee Group',type:'Luxury',sales:'New Launch 2026 · Starting at ₹13.4 Cr'},
     {name:'Hiranandani Fortune',city:'Panvel, Navi Mumbai',price:'₹1.21-3.17 Cr',dev:'Hiranandani Group',type:'Premium-Mid',sales:'2,200+ homes delivered in 588-acre township'},
-    {name:'Godrej Reserve',city:'Devanahalli, Bengaluru',price:'₹30 L - 1.5 Cr+',dev:'Godrej Properties',type:'Luxury Plotted',sales:'950 plots · 92.7-acre forest themed plotted estate'},
     {name:'Swaminarayan City',city:'Dombivli West, Mumbai',price:'₹45-70.5 L',dev:'Swaminarayan LS',type:'Mid-Range',sales:'550 units inside a 148-acre neoclassical layout'},
     {name:'Godrej Ananda',city:'Bagalur, Bengaluru',price:'₹82 L - 1.47 Cr',dev:'Godrej Properties',type:'Premium',sales:'3,000+ units across a 20-acre aerospace zone'},
     {name:'UniMax Pride',city:'Ghot, Taloja, Navi Mumbai',price:'₹17.9-47.33 L',dev:'UniMax World',type:'Affordable',sales:'124 units · RERA ID: P52000031129'},
@@ -1928,7 +2026,7 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
         '<p class="project-price">' + p.price + '</p>' +
         '<p class="project-sales">' + p.sales + '</p>';
       grid.appendChild(card);
-      
+
       revealObserver.observe(card);
     });
   }
@@ -1944,227 +2042,796 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
   const container = document.getElementById('threejs-cityscape');
   if (!container) return;
 
-  const tooltip = document.getElementById('threejs-tooltip');
+  // ============================================================
+  // WORLD-CLASS INTERACTIVE STATE-LEVEL MAP & SHOWCASE SYSTEM
+  // ============================================================
 
-  // Scene setup
-  const scene = new THREE.Scene();
-  scene.background = null;
+  // 1. Inject Premium Styles for Map Dashboard Layout & Two-Way Controller
+  const mapStyle = document.createElement('style');
+  mapStyle.textContent = `
+    .map-dashboard {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(20, 15, 32, 0.95) 0%, rgba(8, 4, 18, 1) 100%);
+      border-radius: var(--radius-squircle);
+      overflow: hidden;
+      position: relative;
+    }
 
-  // Orthographic Camera for perfect isometric projection
-  const aspect = container.clientWidth / container.clientHeight;
-  const d = 8;
-  const camera = new THREE.OrthographicCamera(-d * aspect, d * aspect, d, -d, 1, 1000);
-  camera.position.set(15, 15, 15);
-  camera.lookAt(0, 0, 0);
+    .map-visual-pane {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: hidden;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-  // WebGL Renderer
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-  renderer.shadowMap.enabled = true;
-  container.appendChild(renderer.domElement);
+    .india-globe-stage {
+      position: relative;
+      width: min(100%, 650px);
+      height: min(100%, 650px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.08), transparent 18%),
+        radial-gradient(circle at 50% 50%, rgba(159, 82, 149, 0.12), rgba(8, 4, 18, 0.98) 64%, rgba(0, 0, 0, 0.88) 100%);
+      box-shadow:
+        inset -28px -34px 70px rgba(0, 0, 0, 0.72),
+        inset 18px 18px 55px rgba(212, 107, 224, 0.08),
+        0 0 80px rgba(159, 82, 149, 0.16);
+      overflow: hidden;
+      transform-style: preserve-3d;
+    }
 
-  // Lights setup
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.22);
-  scene.add(ambientLight);
+    .india-globe-stage::before,
+    .india-globe-stage::after {
+      content: '';
+      position: absolute;
+      inset: 8%;
+      border-radius: 50%;
+      pointer-events: none;
+    }
 
-  const dirLight = new THREE.DirectionalLight(0xecdcf0, 0.9);
-  dirLight.position.set(10, 20, 10);
-  dirLight.castShadow = true;
-  scene.add(dirLight);
+    .india-globe-stage::before {
+      background:
+        repeating-linear-gradient(0deg, transparent 0 37px, rgba(212, 107, 224, 0.08) 38px 39px),
+        repeating-linear-gradient(90deg, transparent 0 45px, rgba(255, 255, 255, 0.045) 46px 47px);
+      mask-image: radial-gradient(circle, #000 0 58%, transparent 70%);
+      -webkit-mask-image: radial-gradient(circle, #000 0 58%, transparent 70%);
+      opacity: 0.58;
+    }
 
-  const fillLight = new THREE.DirectionalLight(0x9f5295, 0.45);
-  fillLight.position.set(-10, 10, -10);
-  scene.add(fillLight);
+    .india-globe-stage::after {
+      inset: 0;
+      background: radial-gradient(circle at 38% 42%, transparent 0 42%, rgba(0, 0, 0, 0.38) 72%, rgba(0, 0, 0, 0.82) 100%);
+    }
 
-  // Isometric Floor Grid Helper (Custom Glowing Violet and Velvet colors)
-  const gridHelper = new THREE.GridHelper(16, 16, 0x9f5295, 0x22172b);
-  gridHelper.position.y = -0.01;
-  scene.add(gridHelper);
+    .india-coordinate-plane {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(72%, 440px);
+      aspect-ratio: 612 / 696;
+      transform: translate(-50%, -50%);
+      transform-style: preserve-3d;
+      z-index: 10;
+    }
 
-  // 3D Projects Array
-  const projects3D = [
-    {name:'DLF The Dahlias',price:'₹70 Cr avg',dev:'DLF Ltd.',city:'Gurugram',sales:'₹13,744 Cr sales in FY25 bookings',x:-4,z:-4,h:5.5,w:1.2,d:1.2,color:'#7c3aed'},
-    {name:'DLF Privana North',price:'₹6.7-7 Cr+',dev:'DLF Ltd.',city:'Gurugram',sales:'₹11,000 Cr sold out in 1 week',x:-2,z:-4,h:4.0,w:1.0,d:1.0,color:'#9f5295'},
-    {name:'Lodha Malabar',price:'₹135 Cr+',dev:'Lodha Group',city:'Mumbai',sales:'₹270 Cr registered in 2024',x:0,z:-4,h:6.5,w:1.3,d:1.3,color:'#8b5cf6'},
-    {name:'DLF The Westpark',price:'₹4.8-9 Cr',dev:'DLF Ltd.',city:'Mumbai',sales:'₹2,300 Cr sold out in 1 week',x:2,z:-4,h:4.5,w:1.1,d:1.1,color:'#f59e0b'},
-    {name:'Godrej Trilogy',price:'₹17.5 Cr+',dev:'Godrej Properties',city:'Mumbai',sales:'₹2,000 Cr Phase 1 bookings',x:4,z:-4,h:5.0,w:1.1,d:1.1,color:'#3b82f6'},
-    {name:'Trump Residences',price:'₹5-15 Cr',dev:'Tribeca & Smartworld',city:'Gurugram',sales:'₹3,250 Cr sold out launch day',x:-4,z:-1.5,h:5.8,w:1.2,d:1.2,color:'#8b5cf6'},
-    {name:'Godrej Woodscapes',price:'₹1.74-4.72 Cr',dev:'Godrej Properties',city:'Bengaluru',sales:'2,000+ units, ₹3,150+ Cr',x:-1.5,z:-1.5,h:3.8,w:1.0,d:1.0,color:'#9f5295'},
-    {name:'Wadhwa Wise City',price:'₹50 L-1.5 Cr',dev:'Wadhwa Group',city:'Navi Mumbai',sales:'405 ready flats leased',x:1,z:-1.5,h:2.2,w:1.2,d:1.2,color:'#6b7280'},
-    {name:'Godrej Varanya',price:'₹2.14-4.39 Cr',dev:'Godrej Properties',city:'Navi Mumbai',sales:'6.5-acre plot, ₹3,500 Cr potential',x:3,z:-1.5,h:3.5,w:1.1,d:1.1,color:'#9f5295'},
-    {name:'Godrej Urban Park',price:'₹1.48-2.85 Cr',dev:'Godrej Properties',city:'Powai',sales:'Slated for Sept 2026 completion',x:-3,z:1,h:3.2,w:1.0,d:1.0,color:'#3b82f6'},
-    {name:'Rustomjee Crescent',price:'₹5-15 Cr',dev:'Rustomjee Group',city:'Bandra Pali Hill',sales:'Launch 2026 starting at ₹13.4 Cr',x:-1,z:1,h:4.8,w:1.1,d:1.1,color:'#9f5295'},
-    {name:'Hiranandani Fortune',price:'₹1.21-3.17 Cr',dev:'Hiranandani Group',city:'Navi Mumbai',sales:'2,200+ homes delivered',x:1.5,z:1,h:2.8,w:1.3,d:1.3,color:'#f97316'},
-    {name:'Godrej Reserve',price:'₹30 L-1.5 Cr+',dev:'Godrej Properties',city:'Bengaluru',sales:'950 plots, forest-themed',x:3.5,z:1,h:1.5,w:1.4,d:1.4,color:'#06b6d4'},
-    {name:'Swaminarayan City',price:'₹45-70.5 L',dev:'Swaminarayan LS',city:'Dombivli',sales:'550 units neoclassical layout',x:-4,z:3.5,h:2.0,w:1.3,d:1.3,color:'#6b7280'},
-    {name:'Godrej Ananda',price:'₹82 L-1.47 Cr',dev:'Godrej Properties',city:'Bengaluru',sales:'3,000+ units aerospace zone',x:-2,z:3.5,h:3.0,w:1.0,d:1.0,color:'#3b82f6'},
-    {name:'UniMax Pride',price:'₹17.9-47.33 L',dev:'UniMax World',city:'Taloja',sales:'124 units affordable layout',x:0,z:3.5,h:1.8,w:0.9,d:0.9,color:'#ef4444'},
-    {name:'Signature Global',price:'₹50 L-1.5 Cr',dev:'Signature Global',city:'Gurugram',sales:'150-acre large floors layout',x:2,z:3.5,h:2.2,w:1.1,d:1.1,color:'#f97316'},
-    {name:'Oberoi Esquire',price:'₹8-15 Cr',dev:'Oberoi Realty',city:'Goregaon East',sales:'Fully ready luxury tower',x:4,z:3.5,h:5.2,w:1.2,d:1.2,color:'#f59e0b'},
-    {name:'Piramal Mahalaxmi',price:'₹10-25 Cr',dev:'Piramal Realty',city:'Mahalaxmi',sales:'3 iconic sea-view towers',x:-1,z:6,h:6.0,w:1.3,d:1.3,color:'#8b5cf6'},
-    {name:'M3M Golf Hills',price:'₹2-8 Cr',dev:'M3M Group',city:'Gurugram',sales:'Premium golf-themed residences',x:2,z:6,h:4.2,w:1.1,d:1.1,color:'#9f5295'}
+    .india-map-exact-fill,
+    .india-map-exact-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    .india-map-exact-fill {
+      background:
+        radial-gradient(circle at 45% 45%, rgba(212, 107, 224, 0.42), rgba(159, 82, 149, 0.26) 44%, rgba(62, 29, 75, 0.5) 100%);
+      mask: url('india-map-paths.svg') center / contain no-repeat;
+      -webkit-mask: url('india-map-paths.svg') center / contain no-repeat;
+      filter: drop-shadow(0 0 18px rgba(212, 107, 224, 0.42));
+    }
+
+    .india-map-exact-lines {
+      opacity: 0.58;
+      mix-blend-mode: screen;
+      filter: invert(64%) sepia(44%) saturate(1000%) hue-rotate(252deg) brightness(108%) contrast(92%) drop-shadow(0 0 8px rgba(212, 107, 224, 0.35));
+    }
+
+    .india-map-label {
+      position: absolute;
+      left: 50%;
+      bottom: 7%;
+      transform: translateX(-50%);
+      z-index: 12;
+      padding: 7px 14px;
+      border: 1px solid rgba(212, 107, 224, 0.28);
+      border-radius: 999px;
+      background: rgba(8, 4, 18, 0.62);
+      color: rgba(255, 255, 255, 0.76);
+      font-family: var(--font-head);
+      font-size: 9px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .map-sidebar-pane {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(12, 8, 20, 0.7);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      overflow-y: auto;
+    }
+
+    .sidebar-header {
+      margin-bottom: 20px;
+    }
+    .sidebar-title {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .sidebar-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Interactive State list */
+    .hub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .hub-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .hub-item:hover, .hub-item.active {
+      background: rgba(159, 82, 149, 0.12);
+      border-color: var(--brand-purple-light);
+      box-shadow: 0 4px 20px rgba(159, 82, 149, 0.15);
+      transform: translateX(4px);
+    }
+    .hub-item-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hub-dot-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    .hub-item:hover .hub-dot-indicator, .hub-item.active .hub-dot-indicator {
+      background: var(--brand-purple-light);
+      box-shadow: 0 0 8px var(--brand-purple-light);
+    }
+    .hub-name {
+      font-family: var(--font-head);
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .hub-item:hover .hub-name, .hub-item.active .hub-name {
+      color: #ffffff;
+    }
+    .hub-metric {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+    .hub-item:hover .hub-metric, .hub-item.active .hub-metric {
+      color: var(--brand-purple-light);
+    }
+
+    /* Glowing Hotspot Beacons */
+    .map-hotspot {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      z-index: 25;
+    }
+    .hotspot-core {
+      position: absolute;
+      top: 4px; left: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--brand-purple-light);
+      box-shadow: 0 0 12px var(--brand-purple-light), 0 0 25px rgba(212, 107, 224, 0.7);
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .hotspot-ring {
+      position: absolute;
+      top: -3px; left: -3px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1.5px solid var(--brand-purple-light);
+      opacity: 0.8;
+      animation: beaconPulse 2.2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+      pointer-events: none;
+    }
+    .map-hotspot:hover .hotspot-core, .map-hotspot.active .hotspot-core {
+      background: #ffffff;
+      transform: scale(1.3);
+      box-shadow: 0 0 18px #ffffff, 0 0 35px var(--brand-purple-light);
+    }
+
+    @keyframes beaconPulse {
+      0% { transform: scale(0.4); opacity: 0.9; }
+      80% { transform: scale(1.8); opacity: 0; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    /* Regional Metrics Quick Panel */
+    .quick-metric-panel {
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+    }
+    .quick-metric-val {
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+    .quick-metric-lbl {
+      font-size: 9.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    /* Glassmorphic Map Showcase popup */
+    .map-tooltip-card {
+      position: absolute;
+      width: 325px;
+      background: rgba(10, 6, 16, 0.96);
+      backdrop-filter: blur(28px) saturate(130%);
+      -webkit-backdrop-filter: blur(28px) saturate(130%);
+      border: 1px solid rgba(212, 107, 224, 0.45);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(159, 82, 149, 0.2);
+      color: #ffffff;
+      font-family: var(--font-body);
+      z-index: 1000;
+      pointer-events: auto;
+      display: none;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .map-tooltip-card.visible {
+      display: block;
+      opacity: 1;
+      transform: scale(1);
+    }
+    .map-btn-maps {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      margin-top: 14px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: rgba(159, 82, 149, 0.2);
+      border: 1.2px solid var(--brand-purple-light);
+      color: #ffffff;
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .map-btn-maps:hover {
+      background: var(--brand-purple-light);
+      box-shadow: 0 0 15px rgba(212, 107, 224, 0.45);
+      transform: translateY(-1.5px);
+    }
+
+    @media (max-width: 900px) {
+      .map-dashboard {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .map-visual-pane {
+        height: 480px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .india-globe-stage {
+        width: min(100%, 470px);
+        height: min(100%, 470px);
+      }
+      .india-coordinate-plane {
+        width: min(76%, 350px);
+      }
+      .map-sidebar-pane {
+        height: auto;
+        padding: 20px;
+      }
+    }
+  `;
+  document.head.appendChild(mapStyle);
+
+  // 2. Pre-defined Substantiated Hotspots & High-End visual mockups
+  const hotspotsData = [
+    {
+      id: 'mumbai',
+      name: 'Mumbai Metropolitan Region',
+      price: '₹2.9 Cr – ₹369 Cr+',
+      city: 'Walkeshwar · Pali Hill · Saat Rasta · Powai · Panvel',
+      image: 'mumbai.png',
+      details: [
+        '<strong>Lodha Malabar:</strong> Walkeshwar. Verified sea-view triplex sales of ₹369 Cr (Taparia family) & ₹270 Cr (Anil Gupta, Wellknown Polyesters).',
+        '<strong>Piramal Mahalaxmi:</strong> Saat Rasta. 3 luxury towers overlooking racecourse. ₹1,500 Cr launch bookings (250+ units).',
+        '<strong>Rustomjee Crescent:</strong> Pali Hill Bandra West. ₹1,400 Cr GDV joint venture with Mt. K Kapital.'
+      ],
+      mapsLink: 'https://www.google.com/maps/place/18%C2%B057\'15.1%22N+72%C2%B048\'08.3%22E/@18.9542,72.8023,17z',
+      lat: 18.9542,
+      lng: 72.8023,
+      top: '59.5%',
+      left: '16.5%',
+      metric: '₹2,500+ Cr GDV'
+    },
+    {
+      id: 'gurugram',
+      name: 'Gurugram (Delhi NCR Hub)',
+      price: '₹6.7 Cr – ₹100 Cr+',
+      city: 'Golf Course Road · Sectors 76/77 · Sector 69',
+      image: 'gurugram.png',
+      details: [
+        '<strong>DLF The Dahlias:</strong> Golf Course Rd. direct successor to Camellias. Historic ₹13,744 Cr sales bookings in FY25 (total GDV of ₹34,000+ Cr).',
+        '<strong>DLF Privana North:</strong> Sectors 76/77. Sleek 50-storey high-rises. All 1,164 units sold out in 7 days, recording ₹11,000 Cr in bookings.',
+        '<strong>Trump Residences:</strong> Sector 69. High-end lifestyle tower. Spurred ₹3,250 Cr in bookings, selling out on launch day.'
+      ],
+      mapsLink: 'https://www.google.com/maps/place/28%C2%B026\'08.9%22N+77%C2%B005\'54.2%22E/@28.4358,77.0984,17z',
+      lat: 28.4358,
+      lng: 77.0984,
+      top: '28.5%',
+      left: '31%',
+      metric: '₹28,000+ Cr GDV'
+    },
+    {
+      id: 'bengaluru',
+      name: 'Bengaluru (South Hub)',
+      price: '₹30 L – ₹4.72 Cr+',
+      city: 'Whitefield · Devanahalli · Bagalur',
+      image: 'bengaluru.png',
+      details: [
+        '<strong>Godrej Woodscapes:</strong> Whitefield forest-themed luxury. Historic ₹3,150+ Cr launch bookings (2,000+ homes sold in Q1 FY25).',
+        '<strong>Airport corridor demand:</strong> Devanahalli and Bagalur remain high-intent plotted, second-home, and NRI discovery zones around North Bengaluru infrastructure.',
+        '<strong>Godrej Ananda:</strong> Bagalur Aerospace Park. Sleek 20-acre modern high-rise development with over 3,000 units.'
+      ],
+      mapsLink: 'https://www.google.com/maps?q=13.048072,77.751634',
+      lat: 13.0481,
+      lng: 77.7516,
+      top: '78.7%',
+      left: '33%',
+      metric: '₹5,000+ Cr GDV'
+    },
+    {
+      id: 'pune',
+      name: 'Pune Operations',
+      price: 'ONYX Tower, Koregaon Park',
+      city: 'Kharadi · Hinjewadi · Baner · Mahalunge',
+      image: 'pune.png',
+      details: [
+        '<strong>Onyx Tower Office:</strong> Core operations center. Coordinates: [18.5385° N, 73.9056° E] overlooking Westin KP.',
+        '<strong>Godrej Hillside:</strong> Mahalunge township. Leading exclusive regional sales mandates.',
+        '<strong>Kolte-Patil Developers:</strong> Strategic marketing partner for luxury/premium baner launches.'
+      ],
+      mapsLink: 'https://www.google.com/maps/place/18%C2%B032\'18.6%22N+73%C2%B054\'20.2%22E/@18.5385,73.9056,17z',
+      lat: 18.5385,
+      lng: 73.9056,
+      top: '60.8%',
+      left: '20%',
+      metric: 'ONYX Koregaon Park'
+    },
+    {
+      id: 'hyderabad',
+      name: 'Hyderabad (Western Corridor)',
+      price: 'Madhapur Executive Hub',
+      city: 'Gachibowli · HITEC City · Kokapet',
+      image: 'hyderabad.png',
+      details: [
+        '<strong>Executive Operations:</strong> Madhapur office located in direct vicinity of Salarpuria Sattva Knowledge City.',
+        '<strong>My Home Tridasa:</strong> High-volume exclusive residential sales campaign.',
+        '<strong>Aparna Kanopy Marigold:</strong> Large-scale premium gated mandate.'
+      ],
+      mapsLink: 'https://www.google.com/maps?q=17.4483,78.3741',
+      lat: 17.4483,
+      lng: 78.3741,
+      top: '64.3%',
+      left: '35%',
+      metric: 'Knowledge City Office'
+    },
+    {
+      id: 'chennai',
+      name: 'Chennai (Coastal Hub)',
+      price: 'Anna Salai, Teynampet Office',
+      city: 'OMR Corridor · Teynampet · Xanadu',
+      image: 'chennai.png',
+      details: [
+        '<strong>Imperial Teynampet:</strong> Direct physical branch office handling OMR high-value mandates.',
+        '<strong>Casagrand First City:</strong> Large-scale luxury development commercialized exclusively.',
+        '<strong>Brigade Xanadu:</strong> High-end lifestyle residential mandate.'
+      ],
+      mapsLink: 'https://www.google.com/maps/place/4th+Floor,+Imperial,+Rear+Block,+Anna+Salai,+Teynampet,+Chennai,+Tamil+Nadu+600018',
+      lat: 13.0418,
+      lng: 80.2341,
+      top: '78.7%',
+      left: '41.5%',
+      metric: 'Imperial Anna Salai'
+    },
+    {
+      id: 'kolkata',
+      name: 'Kolkata (East Hub)',
+      price: 'Woodburn Park Executive Office',
+      city: 'Woodburn Park · Alipore · Salt Lake',
+      image: 'kolkata.png',
+      details: [
+        '<strong>Woodburn Central Branch:</strong> Direct physical office coordinating East India developer sales.',
+        '<strong>Premium Sales Spike:</strong> Promoted 31% YoY surge in premium launches across Kolkata in FY25.',
+        '<strong>Waterfront Residences:</strong> Exclusive sales advisory mandates.'
+      ],
+      mapsLink: 'https://www.google.com/maps/place/22%C2%B032\'21.1%22N+88%C2%B021\'04.3%22E/@22.5392,88.3512,17z',
+      lat: 22.5392,
+      lng: 88.3512,
+      top: '47.8%',
+      left: '69%',
+      metric: 'Woodburn Central'
+    },
+    {
+      id: 'goa',
+      name: 'Goa Hospitality Mandates',
+      price: 'HVS ANAROCK Advisory',
+      city: 'Panaji · Calangute · HOPE Conference',
+      image: 'goa.png',
+      details: [
+        '<strong>HVS ANAROCK:</strong> Dominant luxury hospitality consulting, valuations and transactions.',
+        '<strong>HOPE Conference:</strong> Annual elite national hotel conference host in Goa.',
+        '<strong>ADR / RevPAR Benchmarking:</strong> Premier intelligence tracking across Calangute waterfront resorts.'
+      ],
+      mapsLink: 'https://www.google.com/maps?q=15.4909,73.8278',
+      lat: 15.4909,
+      lng: 73.8278,
+      top: '70.7%',
+      left: '19.8%',
+      metric: 'HVS Hospitality'
+    }
   ];
 
-  const buildingMeshes = [];
+  // 3. Re-build Dashboard HTML (Visual Map left, Sidebar control right)
+  container.innerHTML = '';
 
-  // Spawn buildings in grid
-  projects3D.forEach((proj, idx) => {
-    const group = new THREE.Group();
-    group.position.set(proj.x, 0, proj.z);
+  const mapDashboard = document.createElement('div');
+  mapDashboard.className = 'map-dashboard';
 
-    // Box Geometry representing building block
-    const geom = new THREE.BoxGeometry(proj.w, proj.h, proj.d);
-    geom.translate(0, proj.h / 2, 0); // Origin at bottom face
+  // Left visual pane holds detailed state SVG map and pulsing hotspots
+  const visualPane = document.createElement('div');
+  visualPane.className = 'map-visual-pane';
 
-    // High contrast glassmorphic material
-    const mat = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color(0x110a18),
-      roughness: 0.2,
-      metalness: 0.9,
-      transmission: 0.15,
-      clearcoat: 1.0,
-      emissive: new THREE.Color(proj.color),
-      emissiveIntensity: 0.14
-    });
+  // Tooltip popup inside the visual pane
+  const tooltipCard = document.createElement('div');
+  tooltipCard.className = 'map-tooltip-card';
+  visualPane.appendChild(tooltipCard);
 
-    const mesh = new THREE.Mesh(geom, mat);
-    mesh.castShadow = true;
-    mesh.receiveShadow = true;
-    mesh.userData = { proj, idx, color: proj.color };
-    group.add(mesh);
+  // Accurate India geometry rendered as a globe-focused asset. The SVG file is the source of truth.
+  visualPane.insertAdjacentHTML('beforeend', `
+    <div class="india-globe-stage" aria-label="Accurate India operations map on a globe">
+      <div class="india-coordinate-plane" id="india-coordinate-plane">
+        <div class="india-map-exact-fill" id="india-svg-map" aria-hidden="true"></div>
+        <img class="india-map-exact-lines" src="india-map-paths.svg" alt="Accurate map of India" />
+      </div>
+      <div class="india-map-label">India operational footprint</div>
+    </div>
+    <div class="three-instructions">Move mouse to hover India hubs · Click to scroll to details</div>
+  `);
 
-    // Wireframe grid lines overlay on buildings for window panels look
-    const wireGeom = new THREE.BoxGeometry(proj.w * 1.01, proj.h * 1.01, proj.d * 1.01);
-    wireGeom.translate(0, proj.h / 2, 0);
-    const wireMat = new THREE.MeshBasicMaterial({
-      color: 0xd46be0,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.08
-    });
-    const wire = new THREE.Mesh(wireGeom, wireMat);
-    group.add(wire);
+  // Right sidebar pane holds the detailed office listing and regional metric quick panel
+  const sidebarPane = document.createElement('div');
+  sidebarPane.className = 'map-sidebar-pane';
 
-    // Glowing pink pin/beacon on top of the towers
-    const sphereGeom = new THREE.SphereGeometry(0.1, 8, 8);
-    sphereGeom.translate(0, proj.h + 0.15, 0);
-    const sphereMat = new THREE.MeshBasicMaterial({ color: 0xd46be0 });
-    const sphere = new THREE.Mesh(sphereGeom, sphereMat);
-    group.add(sphere);
+  sidebarPane.innerHTML = `
+    <div class="sidebar-header">
+      <h3 class="sidebar-title">ANAROCK Operational Network</h3>
+      <p class="sidebar-desc">ANAROCK's India operating network across high-value residential, office, and hospitality markets. Hover over listed hubs or globe beacons to view project context and market metrics.</p>
+    </div>
 
-    scene.add(group);
-    buildingMeshes.push(mesh);
-  });
+    <div class="hub-list" id="mapHubList"></div>
 
-  // Raycaster & Mouse hover highlights
-  const raycaster = new THREE.Raycaster();
-  const mouse = new THREE.Vector2();
-  let hoveredMesh = null;
+    <div class="quick-metric-panel">
+      <div>
+        <div class="quick-metric-val">₹51,500+ Cr</div>
+        <div class="quick-metric-lbl">Cumulative Sales</div>
+      </div>
+      <div style="border-left: 1px solid rgba(255,255,255,0.08); height: 30px;"></div>
+      <div>
+        <div class="quick-metric-val">90,000+</div>
+        <div class="quick-metric-lbl">Homes Sold</div>
+      </div>
+    </div>
+  `;
 
-  container.addEventListener('mousemove', (e) => {
-    const rect = renderer.domElement.getBoundingClientRect();
-    mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+  mapDashboard.appendChild(visualPane);
+  mapDashboard.appendChild(sidebarPane);
+  container.appendChild(mapDashboard);
 
-    raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObjects(buildingMeshes);
+  // 4. Render Hub Items inside Sidebar
+  const hubListContainer = document.getElementById('mapHubList');
+  hotspotsData.forEach(spot => {
+    const hubItem = document.createElement('div');
+    hubItem.className = 'hub-item';
+    hubItem.setAttribute('data-id', spot.id);
 
-    if (intersects.length > 0) {
-      const mesh = intersects[0].object;
-      if (hoveredMesh !== mesh) {
-        if (hoveredMesh) resetHover(hoveredMesh);
-        hoveredMesh = mesh;
-        triggerHover(mesh, e.clientX, e.clientY);
-      } else {
-        // Move tooltip alongside mouse
-        tooltip.style.left = (e.clientX - rect.left + 15) + 'px';
-        tooltip.style.top = (e.clientY - rect.top - 15) + 'px';
-      }
-    } else {
-      if (hoveredMesh) {
-        resetHover(hoveredMesh);
-        hoveredMesh = null;
-      }
-    }
-  });
-
-  function triggerHover(mesh, clientX, clientY) {
-    const proj = mesh.userData.proj;
-    const rect = container.getBoundingClientRect();
-
-    // GSAP high fidelity spring bounce scaling on hover
-    gsap.to(mesh.scale, { y: 1.06, x: 1.06, z: 1.06, duration: 0.35, ease: 'power2.out' });
-    gsap.to(mesh.material, { emissiveIntensity: 0.85, duration: 0.3 });
-
-    // Show tooltips
-    tooltip.innerHTML = `
-      <h4>${proj.name}</h4>
-      <div class="tooltip-price">${proj.price}</div>
-      <div class="tooltip-dev">${proj.dev} · ${proj.city}</div>
-      <div class="tooltip-sales">${proj.sales}</div>
+    hubItem.innerHTML = `
+      <div class="hub-item-left">
+        <span class="hub-dot-indicator"></span>
+        <span class="hub-name">${spot.name}</span>
+      </div>
+      <span class="hub-metric">${spot.metric}</span>
     `;
-    tooltip.style.display = 'block';
-    tooltip.style.left = (clientX - rect.left + 15) + 'px';
-    tooltip.style.top = (clientY - rect.top - 15) + 'px';
-    container.style.cursor = 'pointer';
-  }
 
-  function resetHover(mesh) {
-    gsap.to(mesh.scale, { y: 1, x: 1, z: 1, duration: 0.3, ease: 'power2.out' });
-    gsap.to(mesh.material, { emissiveIntensity: 0.14, duration: 0.3 });
-    tooltip.style.display = 'none';
-    container.style.cursor = 'default';
-  }
+    hubListContainer.appendChild(hubItem);
+  });
 
-  // Click handler to jump directly to cards
-  container.addEventListener('click', () => {
-    if (hoveredMesh) {
-      const proj = hoveredMesh.userData.proj;
-      const cards = document.querySelectorAll('.project-card');
-      cards.forEach(card => {
-        const nameNode = card.querySelector('.project-name');
-        if (nameNode && nameNode.textContent === proj.name) {
-          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          gsap.fromTo(card, 
-            { borderColor: '#d46be0', boxShadow: '0 0 35px rgba(212,107,224,0.7)' },
-            { borderColor: 'rgba(255, 255, 255, 0.1)', boxShadow: '0 4px 24px rgba(0,0,0,0.35)', duration: 1.8, ease: 'power2.out' }
-          );
-        }
+  // 5. Inject pulsing interactive hotspots on the accurate India coordinate plane
+  const coordinatePlane = document.getElementById('india-coordinate-plane');
+  hotspotsData.forEach(spot => {
+    const beacon = document.createElement('div');
+    beacon.className = 'map-hotspot';
+    beacon.style.top = spot.top;
+    beacon.style.left = spot.left;
+    beacon.setAttribute('data-id', spot.id);
+
+    beacon.innerHTML = `
+      <div class="hotspot-ring"></div>
+      <div class="hotspot-core"></div>
+    `;
+
+    (coordinatePlane || visualPane).appendChild(beacon);
+  });
+
+  // 6. Bind Interactive State-Level Map & Hotspot Controllers
+  const beacons = visualPane.querySelectorAll('.map-hotspot');
+  const listItems = hubListContainer.querySelectorAll('.hub-item');
+
+  // Master interaction handler to trigger highlight state
+  function activateHub(id, triggerSource, e) {
+    const spot = hotspotsData.find(s => s.id === id);
+    if (!spot) return;
+
+    // Clear active states on all elements
+    beacons.forEach(b => b.classList.remove('active'));
+    listItems.forEach(l => l.classList.remove('active'));
+
+    // Activate target elements
+    const activeBeacon = visualPane.querySelector(`.map-hotspot[data-id="${id}"]`);
+    const activeListItem = hubListContainer.querySelector(`.hub-item[data-id="${id}"]`);
+
+    if (activeBeacon) activeBeacon.classList.add('active');
+    if (activeListItem) activeListItem.classList.add('active');
+
+    if (activeBeacon) {
+      gsap.to(activeBeacon.querySelector('.hotspot-core'), {
+        scale: 1.35,
+        duration: 0.35,
+        ease: 'back.out(1.5)',
+        overwrite: 'auto'
       });
     }
+
+    // Scroll active sidebar item into view
+    if (activeListItem && triggerSource !== 'sidebar') {
+      activeListItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Build photo-supported list items
+    const detailsHtml = spot.details.map(detail => `
+      <li style="font-size:12.2px; line-height:1.45; color:rgba(255,255,255,0.85); padding-left:14px; position:relative; margin-bottom:5px;">
+        <span style="position:absolute; left:0; top:4.5px; width:5.5px; height:5.5px; border-radius:50%; background:var(--brand-purple-light);"></span>
+        ${detail}
+      </li>
+    `).join('');
+
+    // Update tooltip pop-up content with verified metrics
+    tooltipCard.innerHTML = `
+      <div style="width:100%; height:130px; overflow:hidden; border-radius:10px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.08); background:rgba(0,0,0,0.3);">
+        <img src="${spot.image}" style="width:100%; height:100%; object-fit:cover; display:block;" />
+      </div>
+      <h4 style="margin:0 0 4px 0; font-size:16px; color:#fff; font-family:var(--font-head); font-weight:700; letter-spacing:-0.01em;">${spot.name}</h4>
+      <div style="color:var(--brand-purple-light); font-size:12.5px; font-weight:600; margin-bottom:6px;">${spot.price}</div>
+      <div style="font-size:11px; color:rgba(255,255,255,0.4); margin-bottom:10px; font-style:italic;">${spot.city}</div>
+      <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:4px; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px;">
+        ${detailsHtml}
+      </ul>
+      <button class="map-btn-maps" onclick="window.open('${spot.mapsLink}', '_blank')">
+        📍 View Real Location (Google Maps)
+      </button>
+    `;
+
+    // Show Tooltip Card
+    tooltipCard.classList.add('visible');
+
+    // Position tooltip logic
+    const containerRect = visualPane.getBoundingClientRect();
+    const tooltipRect = tooltipCard.getBoundingClientRect();
+
+    let leftPos = 0;
+    let topPos = 0;
+
+    if (triggerSource === 'map' || triggerSource === 'beacon') {
+      leftPos = e.clientX - containerRect.left + 20;
+      topPos = e.clientY - containerRect.top - 40;
+    } else if (activeBeacon) {
+      // Sidebar triggers center tooltip beside the real beacon on the accurate India plane.
+      const beaconRect = activeBeacon.getBoundingClientRect();
+      leftPos = beaconRect.left - containerRect.left + 24;
+      topPos = beaconRect.top - containerRect.top - 40;
+    }
+
+    // Prevent screen boundary overflow
+    if (leftPos + tooltipRect.width > containerRect.width) {
+      leftPos = leftPos - tooltipRect.width - 40;
+    }
+    if (topPos + tooltipRect.height > containerRect.height) {
+      topPos = containerRect.height - tooltipRect.height - 20;
+    }
+    if (topPos < 10) topPos = 10;
+
+    tooltipCard.style.left = leftPos + 'px';
+    tooltipCard.style.top = topPos + 'px';
+  }
+
+  function deactivateHub(id) {
+    const spot = hotspotsData.find(s => s.id === id);
+    if (!spot) return;
+
+    const activeBeacon = visualPane.querySelector(`.map-hotspot[data-id="${id}"]`);
+
+    if (activeBeacon) {
+      gsap.to(activeBeacon.querySelector('.hotspot-core'), {
+        scale: 1.0,
+        duration: 0.3,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
+    }
+  }
+
+  // 7. Bind mouse events for Beacons, Sidebar List Items, and State Paths
+  beacons.forEach(b => {
+    const id = b.getAttribute('data-id');
+
+    b.addEventListener('mouseenter', (e) => activateHub(id, 'beacon', e));
+    b.addEventListener('mousemove', (e) => activateHub(id, 'beacon', e));
+    b.addEventListener('mouseleave', () => deactivateHub(id));
   });
 
-  // Responsive Viewports resize
-  window.addEventListener('resize', () => {
-    const aspect = container.clientWidth / container.clientHeight;
-    camera.left = -d * aspect;
-    camera.right = d * aspect;
-    camera.top = d;
-    camera.bottom = -d;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.clientWidth, container.clientHeight);
+  listItems.forEach(l => {
+    const id = l.getAttribute('data-id');
+    l.addEventListener('mouseenter', (e) => activateHub(id, 'sidebar', e));
+    l.addEventListener('mouseleave', () => deactivateHub(id));
   });
 
-  // Render animation loop
-  let t = 0;
-  function animate() {
-    requestAnimationFrame(animate);
-    t += 0.005;
+  // Hide tooltip when cursor leaves map visual pane completely
+  visualPane.addEventListener('mouseleave', () => {
+    tooltipCard.classList.remove('visible');
+    beacons.forEach(b => b.classList.remove('active'));
+    listItems.forEach(l => l.classList.remove('active'));
+  });
 
-    // Slow elegant panning rotation
-    scene.rotation.y = Math.sin(t * 0.18) * 0.12;
-
-    // Beacon pulsing animation
-    scene.traverse((node) => {
-      if (node instanceof THREE.Mesh && node.geometry instanceof THREE.SphereGeometry) {
-        node.scale.setScalar(1 + Math.sin(t * 6 + node.position.y) * 0.2);
+  // Center list view details on click
+  visualPane.addEventListener('click', (e) => {
+    const targetHotspot = e.target.closest('.map-hotspot');
+    if (targetHotspot) {
+      const targetGrid = document.getElementById('projectGrid');
+      if (targetGrid) {
+        targetGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+    }
+  });
+
+  // World-Class Damped Spring Mouse Parallax Depth System on the India Map
+  const svgMap = document.getElementById('india-coordinate-plane');
+  if (svgMap && visualPane) {
+    visualPane.addEventListener('mousemove', (e) => {
+      const rect = visualPane.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left - rect.width / 2;
+      const mouseY = e.clientY - rect.top - rect.height / 2;
+
+      // Calculate smooth tilt/shift offsets for layered 3D depth illusion
+      const shiftX = (mouseX / rect.width) * 16;  // max horizontal translate: 16px
+      const shiftY = (mouseY / rect.height) * 16; // max vertical translate: 16px
+
+      const rotateX = -(mouseY / rect.height) * 12; // max tilt X: 12 degrees
+      const rotateY = (mouseX / rect.width) * 12;  // max tilt Y: 12 degrees
+
+      gsap.to(svgMap, {
+        x: shiftX,
+        y: shiftY,
+        rotateX: rotateX,
+        rotateY: rotateY,
+        transformPerspective: 800,
+        duration: 0.85,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
+
+      // Shift the absolute hot-spot elements in the OPPOSITE direction to amplify parallax depth!
+      gsap.to('.map-hotspot', {
+        x: -shiftX * 0.45,
+        y: -shiftY * 0.45,
+        duration: 0.85,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
+
     });
 
-    renderer.render(scene, camera);
+    // Seamlessly ease back to stable position on mouse leave
+    visualPane.addEventListener('mouseleave', () => {
+      gsap.to(svgMap, {
+        x: 0,
+        y: 0,
+        rotateX: 0,
+        rotateY: 0,
+        duration: 1.4,
+        ease: 'elastic.out(1, 0.75)',
+        overwrite: 'auto'
+      });
+
+      gsap.to('.map-hotspot', {
+        x: 0,
+        y: 0,
+        duration: 1.4,
+        ease: 'elastic.out(1, 0.75)',
+        overwrite: 'auto'
+      });
+    });
   }
-  animate();
 
 })();
 
@@ -2175,15 +2842,15 @@ p { color: var(--text-body); line-height: 1.62; font-size: 15px; }
 function togglePlaybook(id, el) {
   const drawer = document.getElementById(id);
   const isActive = el.classList.contains('active');
-  
+
   // Close all other drawers first
   document.querySelectorAll('.gap-playbook').forEach(d => d.classList.remove('open'));
   document.querySelectorAll('.gap-item').forEach(item => item.classList.remove('active'));
-  
+
   if (!isActive) {
     el.classList.add('active');
     drawer.classList.add('open');
-    gsap.fromTo(drawer, 
+    gsap.fromTo(drawer,
       { opacity: 0, y: -10 },
       { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }
     );
@@ -2195,12 +2862,12 @@ function switchTab(tabId, el) {
   // Toggle Tab button state
   document.querySelectorAll('.playground-tab').forEach(tab => tab.classList.remove('active'));
   el.classList.add('active');
-  
+
   // Toggle Tab content visibility
   document.querySelectorAll('.playground-content').forEach(content => content.classList.remove('active'));
   const activeTab = document.getElementById(tabId);
   activeTab.classList.add('active');
-  
+
   // Custom triggers on tab activation
   if (tabId === 'tab-avm-engine') {
     // Force trigger default AVM state
@@ -2211,23 +2878,23 @@ function switchTab(tabId, el) {
 // 3. Interactive Clickable WhatsApp CRM Simulation
 function sendMockWhatsAppMessage(userText, botResponse, btnEl) {
   const chatFeed = document.getElementById('wa-chat-feed');
-  
+
   // Disable button after click to prevent spamming
   btnEl.style.opacity = '0.5';
   btnEl.style.pointerEvents = 'none';
-  
+
   // Create User Bubble
   const userBubble = document.createElement('div');
   userBubble.className = 'wa-bubble wa-bubble-user';
   userBubble.innerHTML = userText + '<div class="wa-bubble-time">10:39 AM</div>';
   chatFeed.appendChild(userBubble);
-  
+
   // Scroll to bottom
   chatFeed.scrollTop = chatFeed.scrollHeight;
-  
+
   // GSAP animation for User Bubble
   gsap.fromTo(userBubble, { opacity: 0, scale: 0.8, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: 'back.out(1.2)' });
-  
+
   // Simulate Bot Thinking & Typing
   setTimeout(() => {
     const botBubble = document.createElement('div');
@@ -2235,12 +2902,12 @@ function sendMockWhatsAppMessage(userText, botResponse, btnEl) {
     botBubble.innerHTML = '💬 <em>ANAROCK Assistant is matching records...</em>';
     chatFeed.appendChild(botBubble);
     chatFeed.scrollTop = chatFeed.scrollHeight;
-    
+
     setTimeout(() => {
       // Replace thinking state with actual response
       botBubble.innerHTML = botResponse + '<div class="wa-bubble-time">10:40 AM</div>';
       chatFeed.scrollTop = chatFeed.scrollHeight;
-      
+
       // GSAP Bounce on bot arrival
       gsap.fromTo(botBubble, { scale: 0.9 }, { scale: 1, duration: 0.5, ease: 'elastic.out(1.2, 0.75)' });
     }, 1200);
@@ -2253,12 +2920,12 @@ function runFEMAScan() {
   const statusBadge = document.getElementById('portal-fema-status');
   const checklistItem = document.getElementById('fema-2');
   const statusIcon = document.getElementById('fema-2-status');
-  
+
   btn.innerText = 'Scanning Land Registry Coordinates...';
   btn.style.pointerEvents = 'none';
   statusBadge.innerText = 'Scanning Land Plots (GPS Match)...';
   statusBadge.style.color = '#ffb74d';
-  
+
   // Animate status checks
   setTimeout(() => {
     checklistItem.classList.add('passed');
@@ -2266,7 +2933,7 @@ function runFEMAScan() {
     statusBadge.innerText = '✓ FEMA COMPLIANT (Residential Zoned)';
     statusBadge.style.color = '#4caf50';
     btn.innerText = 'Scan Complete - Certified Safe';
-    
+
     // Confetti/success visual feedback
     gsap.fromTo(statusBadge, { scale: 1.1 }, { scale: 1, duration: 0.6, ease: 'bounce.out' });
   }, 1800);
@@ -2277,10 +2944,10 @@ function startNriVideoVerification() {
   const preview = document.getElementById('nri-video-preview');
   const badge = document.getElementById('nri-hash-badge');
   const btn = document.getElementById('btn-nri-video');
-  
+
   btn.innerText = 'Recording Video Signature...';
   preview.style.display = 'block';
-  
+
   setTimeout(() => {
     preview.style.display = 'none';
     badge.style.display = 'block';
@@ -2294,17 +2961,17 @@ function startNriVideoVerification() {
 // 6. Circle Rate AVM Dynamic Calculations & Warning Alert Systems
 function updateAVM(val) {
   document.getElementById('avm-slider-label').innerText = '₹' + parseInt(val).toLocaleString('en-IN');
-  
+
   const userBar = document.getElementById('avm-user-bar');
   const userLabel = document.getElementById('avm-user-label');
   const taxAlert = document.getElementById('avm-tax-alert');
   const taxDesc = document.getElementById('avm-tax-desc');
-  
+
   // Calculate relative height percentage (Circle rate ₹10,000 = 60%)
   const percentage = (val / 15000) * 90;
   userBar.style.height = percentage + '%';
   userLabel.innerHTML = 'Proposed Value<br>₹' + parseInt(val).toLocaleString('en-IN');
-  
+
   if (val < 10000) {
     // Under-valuation warning triggered
     userBar.style.background = '#ef5350';
@@ -2314,7 +2981,7 @@ function updateAVM(val) {
     taxAlert.style.borderColor = '#ef5350';
     taxAlert.querySelector('span').innerText = '🚨 CRITICAL WARNING: Under-valuation Triggered';
     taxAlert.querySelector('span').style.color = '#ef5350';
-    
+
     const delta = 10000 - val;
     taxDesc.innerHTML = `Proposed transaction price is below the government Circle Rate of ₹10,000. Under <strong>Section 56(2)(x)</strong>, the buyer will face heavy taxes on the difference of <strong>₹${delta.toLocaleString('en-IN')}/sq.ft</strong> as "Income from Other Sources". The seller will be taxed under <strong>Section 50C</strong> based entirely on the Circle Rate.`;
   } else {
@@ -2337,17 +3004,17 @@ function triggerReraScan() {
   const textContainer = document.getElementById('rera-document-view');
   const dial = document.getElementById('rera-dial');
   const report = document.getElementById('rera-flags-report');
-  
+
   line.style.display = 'block';
   btn.innerText = 'Scanning Builder-Buyer Agreement Clauses...';
   btn.style.pointerEvents = 'none';
-  
+
   // Highlight risk words after scanner passes
   setTimeout(() => {
     document.getElementById('hl-buyer-penalty').classList.add('rera-highlight-risk');
     document.getElementById('hl-builder-penalty').classList.add('rera-highlight-risk');
     line.style.display = 'none';
-    
+
     // Count up RERA Compliance Score
     let score = 0;
     const interval = setInterval(() => {
@@ -2360,7 +3027,7 @@ function triggerReraScan() {
         report.style.display = 'block';
         btn.innerText = 'Scan Complete - 1 Critical Violation Found';
         btn.style.background = '#ef5350';
-        
+
         // Dynamic spring zoom of report card
         gsap.fromTo(report, { scale: 0.95 }, { scale: 1, duration: 0.5, ease: 'power2.out' });
       }
